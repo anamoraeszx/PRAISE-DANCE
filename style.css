@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  margin-top: 9px;
+  width: 40%;
+  height: 30%;
+}
+
+body {
+  height: 100vh;
+  background-image: url("img/beckgroud.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  position: relative;
+  height: 75px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4A1656;
+  z-index: 1;
+}
+
+.background {
+  background-image: url("../img/Background.png");
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  flex-direction: column;
+  display: flex;
+}
+
+.login {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemsHeader a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.itemsHeader a:hover {
+  text-decoration: underline #f5cc00;
+  color: #f5cc00;
+}
+
+img {
+  top: 0;
+  height: 200px;
+  width: 145px;
+  clip-path: inset(50px 20px 69px 0 round 50px);
+}
+
+.itemsHeader {
+  display: flex;
+  column-gap: 25px;
+  margin-right: 50px;
+  color: white;
+  align-items: center;
+}
+
+.underheader {
+  display: flex;
+  justify-content: end;
+  height: 80px;
+}
+
+.botao {
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  background-image: url("img/elemento.png");
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+  align-items: center;
+  justify-content: center;
+}
+
+.options {
+  height: 75px;
+  display: none;
+  top: 100%;
+  margin-right: 30px;
+  background-color: #4A1656;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.options a {
+  display: block;
+  padding: 5px;
+  right: 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+.options a:hover {
+  background-color: #4A1656;
+  color: #f5cc00;
+}
+
+/* MAIN */
+
+.container-main {
+  color: #fff;
+  text-align: center;
+  
+}
+.logosite {
+  height: 100%;
+  width: 35%;
+
+}
+
+.container-main h1 {
+  font-size: 7rem;
+}
+
+.container-main h1 span {
+  color: #f5cc00;
+}
+
+.container-main p {
+  font-size: 1.5rem;
+}
+
+.container-main p span {
+  color: #f5cc00;
+  font-weight: 800;
+}
+
+/* SERVIÇOS */
+
+.servicos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.servico-card {
+  width: 350px;
+  height: 200px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #E4A7F2;
+  border-radius: 8px;
+  box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.servico-card:hover {
+  transform: translateY(-5px);
+}
+
+.servico-card h3 {
+  color: #4A1656;
+  font-size: 20px;
+}
+
+.servico-card p {
+  color: #000;
+}
+
+#nossos-servicos {
+  background-color: #4A1656;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+#nossos-servicos h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* SOBRE NÓS */
+
+#sobreDanca {
+  background-color: #E4A7F2;
+  padding: 50px 0;
+}
+
+.titulo-sobreDanca {
+  text-align: center;
+  margin-bottom: 5rem;
+  font-size: 2.5rem;
+}
+
+
+
+#sobreDanca .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 6rem;
+  gap: 6rem;
+}
+
+#sobreDanca .container .card {
+  width: 40%;
+  margin-bottom: 20px;
+  height: 250px;
+  background-color: #4A1656;
+  box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
+  -webkit-box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
+  -moz-box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  text-align: center;
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#sobreDanca .container .nossos-valores{
+  text-align: start;
+}
+
+#sobreDanca .container h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+#sobreDanca .container h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#sobreDanca .container p {
+  color: #ffffff;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+#sobreDanca .container ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#sobreDanca .container li {
+  color: #4A1656;
+  line-height: 1.6;
+}
+
+#sobreDanca .container .form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#sobreDanca .container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+#sobreDanca .container input[type="text"],
+#sobreDanca .container input[type="email"],
+#sobreDanca .container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+#sobreDanca .container button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#sobreDanca .container button[type="submit"]:hover {
+  background-color: #4A1656;
+}
+
+/* FOOTER */
+
+.footer {
+  height: 120px;
+  background-color: #4A1656;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .container p {
+  font-weight: bold;
+}
