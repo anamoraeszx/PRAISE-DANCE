@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAISE DANCE | Login</title>
+    <link rel="stylesheet" href="./styles/login.css">
+    <link rel="shortcut icon" href="../img/LogoPraise.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><img src="../img/LogoPraise.png" alt="Logo da Empresa"></a>
+      <div class="itemsHeader">
+        <h4><a href="index.html">Início</a></h4>
+        <h4><a href="index.html#sobreDanca">Sobre a Dança</a></h4>
+        <h4><a href="index.html#sobreMim">Sobre a mim</a></h4></h4>
+        <h4>||</h4>
+        <buttonn class="botao" onclick="opcaoHeader()"></buttonn>
+      </div>
+    </header>
+    <div class="background">
+      <div class="underheader">
+        <div id="options" class="options">
+          <a href="login.html">Login</a>
+          <a href="TelaDeCadastro.html">Cadastro</a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="login">
+          <h2>Login</h2>
+          <input id="ipt_email" type="text" placeholder="E-mail" required>
+          <input id="ipt_senha" type="password" placeholder="Senha" required>
+          <button id="botaoEnviar" onclick="validarFormulario()">Entrar</button>
+          <a href="TelaDeCadastro.html" class="link">Ainda não tem login?</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer">
+        <div class="container">
+          <p>Oficial PRAISE DANCE - AnaMoraes &copy;</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var maxTentativas = 3;
+      var tentativas = 0;
+
+      function opcaoHeader() {
+        var options = document.getElementById("options");
+        if (options.style.display === "block") {
+          options.style.display = "none";
+        } else {
+          options.style.display = "block";
+        }
+      }
+
+      function validarFormulario() {
+		    var email = ipt_email.value
+        var senha = ipt_senha.value
+
+        var erro = false
+        var emailPadrao = 'fernando@gmail.com'
+        var senhaPadrao = '@Fernando1234'
+        tentativas++
+
+        for (var i = 0; i < maxTentativas; i++) {
+          if (email != emailPadrao) {
+            if (tentativas === maxTentativas) {
+              desabilitarFormulario();
+              return false
+            }
+            erro = true
+          } else if (senha !== senhaPadrao) {
+            if (tentativas === maxTentativas) {
+              desabilitarFormulario();
+              return false
+            }
+            erro = true;
+          }
+        }
+
+        if(erro == false){
+          alert("Login realizado com sucesso!");
+          window.location.href = "../dashboard/mainPage.html";
+        } else if(email != emailPadrao){
+          alert("Email ou senha inválidos")
+        } else if(senha !== senhaPadrao){
+          alert("Email ou senha inválidos")
+        }
+
+      }
+
+      function desabilitarFormulario() {
+        var campoEmail = document.getElementById("ipt_email");
+        var campoSenha = document.getElementById("ipt_senha");
+        var botaoEnviar = document.getElementById("botaoEnviar");
+
+        campoEmail.disabled = true;
+        campoSenha.disabled = true;
+        botaoEnviar.disabled = true;
+
+        alert(
+          "Você excedeu o número máximo de tentativas de login. Tente novamente mais tarde."
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -14,7 +14,7 @@
 
 body {
   height: 100vh;
-  background-image: url("img/beckgroud.png");
+  background-image: url("img/beckgroud2.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -28,7 +28,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #4A1656;
+  background-color: transparent;
   z-index: 1;
 }
 
@@ -58,12 +58,12 @@ header {
 
 .itemsHeader a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
 }
 
 .itemsHeader a:hover {
-  text-decoration: underline #f5cc00;
-  color: #f5cc00;
+  text-decoration: underline #FF077E;
+  color: #FF077E;
 }
 
 img {
@@ -77,7 +77,7 @@ img {
   display: flex;
   column-gap: 25px;
   margin-right: 50px;
-  color: white;
+  color: rgb(0, 0, 0);
   align-items: center;
 }
 
@@ -88,12 +88,12 @@ img {
 }
 
 .botao {
+  background-image: url("img/elemento.png");
   width: 80px;
   height: 80px;
   align-items: center;
-  background-image: url("img/elemento.png");
   background-size: cover;
-  background-color: transparent;
+  /* background-color: transparent; */
   border: none;
   padding: 10px 10px;
   border-radius: 100%;
@@ -108,7 +108,7 @@ img {
   display: none;
   top: 100%;
   margin-right: 30px;
-  background-color: #4A1656;
+  background-color: #FF077E;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
@@ -122,15 +122,15 @@ img {
   color: #fff;
 }
 
-.options a:hover {
-  background-color: #4A1656;
-  color: #f5cc00;
-}
+/* .options a:hover {
+  background-color: #FF077E;
+  color: #FF077E;
+} */
 
 /* MAIN */
 
 .container-main {
-  color: #fff;
+  /* color: #ffffff; */
   text-align: center;
   
 }
@@ -145,7 +145,7 @@ img {
 }
 
 .container-main h1 span {
-  color: #f5cc00;
+  color: #FF077E;
 }
 
 .container-main p {
@@ -153,7 +153,7 @@ img {
 }
 
 .container-main p span {
-  color: #f5cc00;
+  color: #FF077E;
   font-weight: 800;
 }
 
@@ -161,43 +161,67 @@ img {
 
 .sobreMim-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 2rem;
 }
 
 .sobreMim-card {
-  width: 350px;
-  height: 200px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #E4A7F2;
+  width: 300px;
+  height: 500px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
   -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
   -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
   transition: transform 0.3s ease;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+
+/* .titulo-sobreMim h2{
+  color: #000000;
+  background-color: white;
+} */
+
+.card1{
+  background-image: url("img/imagem2.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card2{
+  background-image: url("img/imagem1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card3{
+  background-image: url("img/imagem3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 .sobreMim-card:hover {
   transform: translateY(-5px);
 }
 
 .sobreMim-card h3 {
-  color: #4A1656;
+  color: #ffffff;
   font-size: 20px;
 }
 
 .sobreMim-card p {
-  color: #000;
+  color: #ffffff;
+  margin-bottom: 200px;
 }
 
 #sobreMim{
-  background-color: #4A1656;
+  background-color: #FFff;
   padding-top: 50px;
   padding-bottom: 100px;
   text-align: center;
@@ -212,7 +236,7 @@ img {
 /* SOBRE NÓS */
 
 #sobreDanca {
-  background-color: #E4A7F2;
+  background-color: #0E1327;
   padding: 50px 0;
 }
 
@@ -236,7 +260,7 @@ img {
   width: 40%;
   margin-bottom: 20px;
   height: 250px;
-  background-color: #4A1656;
+  background-color: #ffffff;
   box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
   -webkit-box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
   -moz-box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
@@ -262,17 +286,17 @@ img {
 #sobreDanca .container h2 {
   text-align: center;
   font-size: 24px;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 30px;
 }
 
 #sobreDanca .container h3 {
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 20px;
 }
 
 #sobreDanca .container p {
-  color: #ffffff;
+  color: #000000;
   line-height: 1.6;
   margin-bottom: 20px;
 }
