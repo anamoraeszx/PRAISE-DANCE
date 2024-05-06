@@ -236,8 +236,9 @@ img {
 /* SOBRE NÓS */
 
 #sobreDanca {
-  background-color: #0E1327;
+  background-color: #0C163B;
   padding: 50px 0;
+  color: #fff;
 }
 
 .titulo-sobreDanca {
@@ -322,7 +323,7 @@ img {
   color: #ffffff;
 }
 
-#sobreDanca .container input[type="text"],
+/* #sobreDanca .container input[type="text"],
 #sobreDanca .container input[type="email"],
 #sobreDanca .container textarea {
   width: 100%;
@@ -330,9 +331,9 @@ img {
   border: 1px solid #ccc;
   border-radius: 5px;
   max-width: 100%;
-}
+} */
 
-#sobreDanca .container button[type="submit"] {
+/* #sobreDanca .container button[type="submit"] {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -340,17 +341,17 @@ img {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
+} */
 
-#sobreDanca .container button[type="submit"]:hover {
+/* #sobreDanca .container button[type="submit"]:hover {
   background-color: #4A1656;
-}
+} */
 
 /* FOOTER */
 
 .footer {
   height: 120px;
-  background-color: #4A1656;
+  background-color: #FF077E;
   color: #fff;
   display: flex;
   align-items: center;
