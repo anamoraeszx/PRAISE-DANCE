@@ -14,7 +14,7 @@
 
 body {
   height: 100vh;
-  background-image: url("img/beckgroud2.png");
+  background-image: url("../assets/img/beckgroud2.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -33,7 +33,7 @@ header {
 }
 
 .background {
-  background-image: url("../img/Background.png");
+  /* background-image: url("../assets/img/2.png"); */
   background-size: cover;
   background-position: center;
   height: 85vh;
@@ -41,20 +41,20 @@ header {
   display: flex;
 }
 
-.login {
+/* .login {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-}
+} */
 
-.container {
+/* .container {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .itemsHeader a {
   text-decoration: none;
@@ -88,7 +88,7 @@ img {
 }
 
 .botao {
-  background-image: url("img/elemento.png");
+  background-image: url("../assets/img/elemento.png");
   width: 80px;
   height: 80px;
   align-items: center;
@@ -188,26 +188,26 @@ img {
 } */
 
 .card1{
-  background-image: url("img/imagem2.jpeg");
+  background-image: url("../assets/img/imagem2.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card2{
-  background-image: url("img/imagem1.jpg");
+  background-image: url("../assets/img/imagem1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card3{
-  background-image: url("img/imagem3.jpg");
+  background-image: url("../assets/img/imagem3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 
 .sobreMim-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 .sobreMim-card h3 {
@@ -235,18 +235,84 @@ img {
 
 /* SOBRE NÓS */
 
-#sobreDanca {
+.sobreDanca-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sobreDanca-card {
+  width: 300px;
+  height: 500px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* .titulo-sobreDanca h2{
+  color: #000000;
+  background-color: white;
+} */
+
+.card01{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card02{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sobreDanca-card:hover {
+  transform: translateY(-10px);
+}
+
+.sobreDanca-card h3 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.sobreDanca-card p {
+  color: #ffffff;
+  margin-bottom: 200px;
+}
+
+#sobreDanca{
+  background-color: #FFff;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+#sobreDim h2 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+
+ #sobreDanca {
   background-color: #0C163B;
   padding: 50px 0;
   color: #fff;
-}
+ }
+
 
 .titulo-sobreDanca {
   text-align: center;
   margin-bottom: 5rem;
   font-size: 2.5rem;
-}
-
+} 
 
 
 #sobreDanca .container {
@@ -257,7 +323,9 @@ img {
   gap: 6rem;
 }
 
-#sobreDanca .container .card {
+
+
+/* #sobreDanca .container{
   width: 40%;
   margin-bottom: 20px;
   height: 250px;
@@ -278,16 +346,20 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
+} */
 
-#sobreDanca .container .nossos-valores{
+/* #sobreDanca .container .nossos-valores{
   text-align: start;
-}
+} */
+
+/* .sobreDanca  .card:hover {
+  transform: translateY(-10px);
+} */
 
 #sobreDanca .container h2 {
   text-align: center;
   font-size: 24px;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 
@@ -321,7 +393,7 @@ img {
   display: block;
   margin-bottom: 5px;
   color: #ffffff;
-}
+} 
 
 /* #sobreDanca .container input[type="text"],
 #sobreDanca .container input[type="email"],
@@ -350,7 +422,7 @@ img {
 /* FOOTER */
 
 .footer {
-  height: 120px;
+  height: 80px;
   background-color: #FF077E;
   color: #fff;
   display: flex;
