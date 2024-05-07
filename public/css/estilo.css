@@ -4,8 +4,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
-}
+  /* background-color: #FF077E; */
+  background-image: url("../assets/img/backgroudlogin.png");
+    background-size: cover;
+    background-position: center;
+    height: 70  vh;
+    flex-direction: column;
+    display: flex;
+  }
+
 
 :root {
   --tamanho-header: 80px;
@@ -62,7 +69,7 @@ body {
 
 /* BANNER */
 
-.banner {
+/* .banner {
   height: var(--tamanho-banner);
   color: white;
   background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
@@ -84,11 +91,11 @@ body {
 
 .banner .container span {
   font-weight: 800;
-}
+} */
 
 /* MISSÃO VISÃO VALORES */
 
-.social {
+/* .social {
   background-color: #e5e5e5;
   display: flex;
 }
@@ -116,13 +123,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 /* FOOTER */
 
 .footer {
   background-color: #32b9cd;
-  height: 150px;
+  height: 75px;
   color: #fff;
   display: flex;
   font-size: 15px;
@@ -138,6 +145,62 @@ body {
 }
 
 /* LOGIN */
+
+header {
+  position: relative;
+  height: 75px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.container-main {
+  /* color: #ffffff; */
+  text-align: center;
+  
+}
+
+/* LOGO DO SITE (SUPERIOR) */
+.logosite {
+  height: 100%;
+  width: 35%;
+
+}
+
+.logo {
+  margin-top: 9px;
+  width: 40%;
+  height: 30%;
+}
+
+/* ITENS NO CANTO SUPERIOR */
+
+.itemsHeader a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.itemsHeader a:hover {
+  text-decoration: underline #FF077E;
+  color: #FF077E;
+}
+
+.itemsHeader {
+  display: flex;
+  column-gap: 25px;
+  margin-right: 50px;
+  color: rgb(0, 0, 0);
+  align-items: center;
+}
+
+.underheader {
+  display: flex;
+  justify-content: end;
+  height: 80px;
+}
 
 .login {
   height: var(--tamanho-login);
