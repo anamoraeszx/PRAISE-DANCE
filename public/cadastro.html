@@ -15,28 +15,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
-  <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
-    </div>
+<header>
+  <a href="index.html"><img src="assets/img/LogoPraise.png" alt="Logo da Empresa" class="logo"></a>
+  <div class="itemsHeader">
+    <h4><a href="index.html">Início</a></h4>
+    <h4><a href="index.html#sobreDanca">Sobre a Dança</a></h4>
+    <h4><a href="index.html#sobreMim">Sobre a mim</a></h4>
+    <h4 style="color: #fff;">||</h4>
+    <buttonn class="botao2" onclick="opcaoHeader()"></buttonn>
   </div>
+</header>
+<div class="background">
+  <div class="underheader">
+    <div id="options" class="options">
+      <a href="login.html">Login</a>
+      <a href="cadastro.html">Cadastro</a>
+    </div>
+  </div> 
   <!--header fim-->
 
   <div class="login">
@@ -87,18 +82,30 @@
   </div>
 
   <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
+  <footer>
+    <div class="footer">
+      <div class="container">
+        <p>Oficial PRAISE DANCE - AnaMoraes &copy;</p>
+        <br>
+      </div>
     </div>
-  </div>
+  </footer>
   <!--footer fim-->
 </body>
 
 </html>
 
 <script>
+
+function opcaoHeader() {
+    var options = document.getElementById("options");
+    if (options.style.display === "block") {
+      options.style.display = "none";
+    } else {
+      options.style.display = "block";
+    }
+  } 
+
   function cadastrar() {
     aguardar();
 

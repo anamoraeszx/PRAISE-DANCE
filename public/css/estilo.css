@@ -128,7 +128,7 @@ body {
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
+  background-color: transparent;
   height: 75px;
   color: #fff;
   display: flex;
@@ -204,8 +204,9 @@ header {
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  /* background-image: url('../assets/imgs/bg-jelly-fish-para-home.png'); */
   background-size: cover;
+  margin-top: -50px;
 }
 
 .login .container {
@@ -216,12 +217,12 @@ header {
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
+  background-color: rgba(255,255,255, 0.1 );
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: #FF077E;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -231,6 +232,7 @@ header {
   margin: 0;
   font-size: 30px;
 }
+
 
 .formulario {
   display: flex;
@@ -246,14 +248,14 @@ header {
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
+  border: 2px solid #0C163B;
   text-align: center;
   border-radius: 10px;
   margin: 0;
 }
 
 .formulario select {
-  border: 2px solid #32b9cd;
+  border: 2px solid #0C163B;
   background-color: white;
   color: gray;
   height: 36px;
@@ -261,6 +263,18 @@ header {
   border-radius: 10px;
   margin: 0;
 }
+
+.linkCadatro{
+text-align: center;
+margin-top: 10px;
+color: #fff;
+}
+
+.linkCadatro:hover{
+  text-decoration: underline #FF077E;
+  color: #FF077E;
+}
+
 
 .campo {
   display: flex;
@@ -272,16 +286,63 @@ header {
 .botao {
   cursor: pointer;
   font-family: "Barlow", sans-serif;
-  border: 0;
+  border: 2px solid white;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #e6005a;
+  background-color: #FF077E;
   width: 120px;
   height: 30px;
   align-self: center;
   margin-top: 20px;
+  transition: .3s ease-in-out;
+}
+
+.botao:hover {
+background-color: #0C163B;
+}
+
+.botao2 {
+  background-image: url("../assets/img/elemento.png");
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  background-size: cover;
+  /* background-color: transparent; */
+  border: none;
+  padding: 10px 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+  align-items: center;
+  justify-content: center;
+}
+
+.options {
+  height: 65px;
+  display: none;
+  top: 100%;
+  margin-right: 30px;
+  background-color: #FF077E;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+.options a {
+  display: block;
+  padding: 5px;
+  right: 0;
+  text-decoration: none;
+  color: #fff;
+}
+
+.underheader {
+  display: flex;
+  justify-content: end;
+  height: 70px;
 }
 
 .loading-div {
