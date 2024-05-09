@@ -164,6 +164,7 @@ img {
   flex-wrap: nowrap;
   justify-content: center;
   gap: 2rem;
+
 }
 
 .sobreMim-card {
@@ -188,19 +189,19 @@ img {
 } */
 
 .card1{
-  background-image: url("../assets/img/imagem2.jpeg");
+  background-image: url(../assets/img/video1.gif);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card2{
-  background-image: url("../assets/img/imagem1.jpg");
+  background-image: url("../assets/img/video2.gif");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .card3{
-  background-image: url("../assets/img/imagem3.jpg");
+  background-image: url("../assets/img/video3.gif");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -208,6 +209,7 @@ img {
 
 .sobreMim-card:hover {
   transform: translateY(-10px);
+  
 }
 
 .sobreMim-card h3 {
@@ -243,11 +245,11 @@ img {
 }
 
 .sobreDanca-card {
-  width: 300px;
-  height: 500px;
+  width: 310px;
+  height: 590px;
   margin: 10px;
-  padding: 10px;
-  background-color: #fff;
+  padding: 15px;
+  background-color: #FFff;
   border-radius: 8px;
   box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
   -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
@@ -263,27 +265,25 @@ img {
   background-color: white;
 } */
 
-.card01{
-  background-repeat: no-repeat;
-  background-size: cover;
+.card_img {
+  width: 100%;
+  height: 50%;
+  
 }
 
-.card02{
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 .sobreDanca-card:hover {
   transform: translateY(-10px);
 }
 
 .sobreDanca-card h3 {
-  color: #ffffff;
-  font-size: 20px;
+  color: #000000;
+  font-size: 50px;
 }
 
 .sobreDanca-card p {
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 200px;
 }
 
@@ -294,8 +294,8 @@ img {
   text-align: center;
 }
 
-#sobreDim h2 {
-  color: #fff;
+#sobreDanca h2 {
+  color:#000000;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -359,7 +359,7 @@ img {
 #sobreDanca .container h2 {
   text-align: center;
   font-size: 24px;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 30px;
 }
 
