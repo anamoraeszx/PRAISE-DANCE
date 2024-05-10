@@ -204,7 +204,15 @@ img {
   -letter-spacing: 8px ;
   font-size: 21px;
   color: white; 
-  text-shadow: black 0.10em 0.10em 0.10em
+  text-shadow: black 0.10em 0.10em 0.10em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card2 h3{
+  margin-top: 60%;
 }
 
 .card3{
