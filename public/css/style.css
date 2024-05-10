@@ -192,18 +192,29 @@ img {
   background-image: url(../assets/img/video1.gif);
   background-repeat: no-repeat;
   background-size: cover;
+  color: white; 
+  text-shadow: black 0.10em 0.10em 0.10em
 }
+
 
 .card2{
   background-image: url("../assets/img/video2.gif");
   background-repeat: no-repeat;
   background-size: cover;
+  -letter-spacing: 8px ;
+  font-size: 21px;
+  color: white; 
+  text-shadow: black 0.10em 0.10em 0.10em
 }
 
 .card3{
   background-image: url("../assets/img/video3.gif");
   background-repeat: no-repeat;
   background-size: cover;
+  -letter-spacing: 5px ;
+  font-size: 50px;
+  color: white; 
+  text-shadow: black 0.10em 0.10em 0.10em
 }
 
 
