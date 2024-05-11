@@ -36,7 +36,7 @@ header {
   /* background-image: url("../assets/img/2.png"); */
   background-size: cover;
   background-position: center;
-  height: 85vh;
+  height: 90vh;
   flex-direction: column;
   display: flex;
 }
@@ -75,25 +75,36 @@ img {
 
 .itemsHeader {
   display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  column-gap: 40%;
+  margin-right: 10%;
+  font-size: 23px;
+  white-space: nowrap;
+  margin-top: 4px;
+  padding-top: 15px;
+}
+
+.logo {
+  display: flex;
   column-gap: 25px;
-  margin-right: 50px;
-  color: rgb(0, 0, 0);
+  margin-right: 100px;
+  justify-content: center;
   align-items: center;
 }
 
 .underheader {
   display: flex;
   justify-content: end;
-  height: 80px;
+  height: 70px;
 }
 
-.botao {
-  background-image: url("../assets/img/elemento.png");
+/*.botao {
   width: 80px;
   height: 80px;
   align-items: center;
   background-size: cover;
-  /* background-color: transparent; */
   border: none;
   padding: 10px 10px;
   border-radius: 100%;
@@ -101,17 +112,52 @@ img {
   transition: 0.3s;
   align-items: center;
   justify-content: center;
+}*/
+
+.itens2-cadastro{
+  display: flex;
+  margin-left: 3%;
+  column-gap: 2px;
+  font-size: 23px;
+  white-space: nowrap;
+  margin-top: 20px;
+  padding-top: 25px;
+  color: #fff;
+  background-color: #FF077E;
+  padding: 15px;
+  border-radius: 200px;
+  border-color: #000000;
+  border-width: 4px;
+  transition: 0.1s;
+  cursor: pointer;
 }
 
-.options {
-  height: 75px;
-  display: none;
-  top: 100%;
-  margin-right: 30px;
+.itens2-login{
+  display: flex;
+  margin-right: 3%;
+  column-gap: 2px;
+  font-size: 23px;
+  white-space: nowrap;
+  margin-top: 20px;
+  padding-top: 25px;
+  color: #fff;
   background-color: #FF077E;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 200px;
+  border-color: #000000;
+  border-width: 4px;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.itens2-login:hover{
+  background-color: #0C163B;
+  color: #ffffff;
+}
+
+.itens2-cadastro:hover{
+  background-color: #0C163B;
+  color: #ffffff;
 }
 
 .options a {
@@ -122,10 +168,10 @@ img {
   color: #fff;
 }
 
-/* .options a:hover {
+ .options a:hover {
   background-color: #FF077E;
-  color: #FF077E;
-} */
+  color: #0C163B;
+} 
 
 /* MAIN */
 

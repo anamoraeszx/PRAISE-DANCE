@@ -184,17 +184,24 @@ header {
 }
 
 .itemsHeader a:hover {
-  text-decoration: underline #FF077E;
-  color: #FF077E;
+  text-decoration: underline #0C163B;
+  color: #0C163B;
 }
 
 .itemsHeader {
-  display: flex;
-  column-gap: 25px;
-  margin-right: 50px;
-  color: rgb(0, 0, 0);
-  align-items: center;
-}
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40%;
+    margin-right: 38.8%;
+    margin-left: 5%;
+    font-size: 23px;
+    white-space: nowrap;
+    margin-top: 4px;
+    padding-top: 15px;
+  }
+
 
 .underheader {
   display: flex;

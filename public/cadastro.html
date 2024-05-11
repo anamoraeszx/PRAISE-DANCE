@@ -20,9 +20,7 @@
   <div class="itemsHeader">
     <h4><a href="index.html">Início</a></h4>
     <h4><a href="index.html#sobreDanca">Sobre a Dança</a></h4>
-    <h4><a href="index.html#sobreMim">Sobre a mim</a></h4>
-    <h4 style="color: #fff;">||</h4>
-    <buttonn class="botao2" onclick="opcaoHeader()"></buttonn>
+    <h4><a href="index.html#sobreMim">Sobre a mim</a></h4></div>
   </div>
 </header>
 <div class="background">
@@ -70,6 +68,7 @@
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
+          <a href="login.html" class="linkCadatro">Login</a>
         </div>
         <div id="div_aguardar" class="loading-div">
           <img src="./assets/circle-loading.gif" id="loading-gif" />
@@ -95,15 +94,6 @@
 </html>
 
 <script>
-
-function opcaoHeader() {
-    var options = document.getElementById("options");
-    if (options.style.display === "block") {
-      options.style.display = "none";
-    } else {
-      options.style.display = "block";
-    }
-  } 
 
   function cadastrar() {
     aguardar();

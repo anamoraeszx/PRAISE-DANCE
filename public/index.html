@@ -11,25 +11,18 @@
     <header>
       <a href="index.html"><img src="assets/img/LogoPraise.png" alt="Logo da Empresa" class="logo"></a>
       <div class="itemsHeader">
-        <h4><a href="index.html">Início</a></h4>
-        <h4><a href="index.html#sobreDanca">Sobre a Dança</a></h4>
-        <h4><a href="index.html#sobreMim">Sobre a mim</a></h4>
-        <h4 style="color: #fff;">||</h4>
-        <buttonn class="botao" onclick="opcaoHeader()"></buttonn>
-      </div>
+        <h4><a href="index.html" >Início</a></h4>
+        <h4><a href="#" id="linkSobreDanca">Sobre a Dança</a></h4>
+        <h4><a href="#"" id="linkSobreMim">Sobre mim</a></h4></div>
+      <button class="itens2-cadastro" onclick="cadastro()"> <h4>Cadastro</h4></button>
+      <button class="itens2-login" onclick="login()"><h4> Login</h4></button></div>
     </header>
+   
     <div class="background">
-      <div class="underheader">
-        <div id="options" class="options">
-          <a href="login.html">Login</a>
-          <a href="cadastro.html">Cadastro</a>
-        </div>
-      </div>
-
       <div class="container-main">
-        <img src="assets/img/2.png" alt="logo" class="logosite">
+        <img src="assets/img/2.png" alt="logo" class="logosite"> </div>
       </div>
-    </div>
+   
 
     <section id="sobreMim">
       <h2 style="color: rgb(0, 0, 0);">SOBRE MIM</h2>
@@ -86,27 +79,27 @@ Desde os cinco anos, fui influenciada por amigas a entrar em um grupo de dança,
   </body>
 </html>
 <script>
-  function opcaoHeader() {
-    var options = document.getElementById("options");
-    if (options.style.display === "block") {
-      options.style.display = "none";
-    } else {
-      options.style.display = "block";
-    }
+
+  function cadastro(){
+    window.location.href= 'cadastro.html' ;
+  }
+function login(){
+    window.location.href= 'login.html' ;
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-      var homeLink = document.getElementById("sobre-mim");
+  // Função para rolar suavemente para uma seção
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
 
-  homeLink.addEventListener("click", function (event) {
-  event.preventDefault();
+  // Função para navegar para a seção "Sobre Mim" ao clicar no link
+  document.getElementById('linkSobreMim').addEventListener('click', function() {
+    scrollToSection('sobreMim');
+  });
 
-  window.scrollTo({
-  top: 0,
-  behavior: "smooth",
-      });
-    });
-});
-
-
+  // Função para navegar para a seção "Sobre a Dança" ao clicar no link
+  document.getElementById('linkSobreDanca').addEventListener('click', function() {
+    scrollToSection('sobreDanca');
+  });
 </script>
