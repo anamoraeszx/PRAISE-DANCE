@@ -6,11 +6,7 @@
   box-sizing: border-box;
 }
 
-.logo {
-  margin-top: 9px;
-  width: 40%;
-  height: 30%;
-}
+
 
 body {
   height: 100vh;
@@ -32,8 +28,20 @@ header {
   z-index: 1;
 }
 
+.logo {
+  margin-top: 9px;
+  width: 40%;
+  height: 30%;
+  display: flex;
+  left: 1;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 30vh;
+  margin-top: 4vh;
+}
+
 .background {
-  /* background-image: url("../assets/img/2.png"); */
   background-size: cover;
   background-position: center;
   height: 90vh;
@@ -41,20 +49,16 @@ header {
   display: flex;
 }
 
-/* .login {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-} */
-
-/* .container {
-  height: 100%;
+.itemsHeader {
   display: flex;
-  justify-content: center;
+  text-align: center;
   align-items: center;
-} */
+  justify-content: center;
+  column-gap: 80%;
+  font-size: 23px;
+  white-space: nowrap;
+  margin-top: 4px;
+}
 
 .itemsHeader a {
   text-decoration: none;
@@ -73,117 +77,70 @@ img {
   clip-path: inset(50px 20px 69px 0 round 50px);
 }
 
-.itemsHeader {
+/*MENU HAMBURGUER (NAVEGAR PELO SITE) */
+
+.menu-1 {
   display: flex;
+  cursor: pointer;
+  width: 50px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  column-gap: 40%;
-  margin-right: 10%;
-  font-size: 23px;
-  white-space: nowrap;
-  margin-top: 4px;
-  padding-top: 15px;
+  margin: 3%;
+  margin-top: 4.5%;
 }
 
-.logo {
-  display: flex;
-  column-gap: 25px;
-  margin-right: 100px;
-  justify-content: center;
-  align-items: center;
-}
-
-.underheader {
-  display: flex;
-  justify-content: end;
-  height: 70px;
-}
-
-/*.botao {
-  width: 80px;
-  height: 80px;
-  align-items: center;
-  background-size: cover;
-  border: none;
-  padding: 10px 10px;
-  border-radius: 100%;
-  cursor: pointer;
-  transition: 0.3s;
-  align-items: center;
-  justify-content: center;
-}*/
-
-.itens2-cadastro{
-  display: flex;
-  margin-left: 3%;
-  column-gap: 2px;
-  font-size: 23px;
-  white-space: nowrap;
-  margin-top: 20px;
-  padding-top: 25px;
-  color: #fff;
-  background-color: #FF077E;
-  padding: 15px;
-  border-radius: 200px;
-  border-color: #000000;
-  border-width: 4px;
-  transition: 0.1s;
-  cursor: pointer;
-}
-
-.itens2-login{
-  display: flex;
-  margin-right: 3%;
-  column-gap: 2px;
-  font-size: 23px;
-  white-space: nowrap;
-  margin-top: 20px;
-  padding-top: 25px;
-  color: #fff;
-  background-color: #FF077E;
-  padding: 15px;
-  border-radius: 200px;
-  border-color: #000000;
-  border-width: 4px;
-  transition: 0.1s;
-  cursor: pointer;
-}
-
-.itens2-login:hover{
-  background-color: #0C163B;
-  color: #ffffff;
-}
-
-.itens2-cadastro:hover{
-  background-color: #0C163B;
-  color: #ffffff;
-}
-
-.options a {
-  display: block;
-  padding: 5px;
+.menu {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 0;
   right: 0;
-  text-decoration: none;
-  color: #fff;
+  width: 300px; /* Largura do menu */
+  height: 100%; /* Altura igual à altura da tela */
+  background-color: #FF077E; /* Cor de fundo do menu */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
+  border-radius: 2%;;
+  
 }
 
- .options a:hover {
-  background-color: #FF077E;
+.menu ul li {
+  margin-right: 30px; /* Espaçamento entre os itens da lista */
+  border-bottom: 1px solid black; /* Adicionar uma linha inferior */
+}
+
+.menu.active {
+  display: block; /* Exibido quando ativo */
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 3vh;
+}
+
+.menu a:hover {
   color: #0C163B;
-} 
+}
 
 /* MAIN */
 
 .container-main {
-  /* color: #ffffff; */
-  text-align: center;
-  
+text-align: center;
 }
+
 .logosite {
   height: 100%;
-  width: 35%;
-
+  width: 40%;
+  left: 50vh;
 }
 
 .container-main h1 {
@@ -229,17 +186,19 @@ img {
   justify-content: space-around;
 }
 
-/* .titulo-sobreMim h2{
-  color: #000000;
-  background-color: white;
-} */
-
 .card1{
   background-image: url(../assets/img/video1.gif);
   background-repeat: no-repeat;
   background-size: cover;
   color: white; 
-  text-shadow: black 0.10em 0.10em 0.10em
+  text-shadow: black 0.10em 0.10em 0.10em;
+  background-size: cover;
+  -letter-spacing: 8px ;
+  font-size: 21px;
+}
+
+.card1 h3{
+  margin-top: 11%;
 }
 
 
@@ -258,17 +217,31 @@ img {
 }
 
 .card2 h3{
-  margin-top: 60%;
+  margin-top: 70%;
 }
 
 .card3{
   background-image: url("../assets/img/video3.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  -letter-spacing: 5px ;
-  font-size: 50px;
+  -letter-spacing: 4px ;
+  font-size: 21px;
   color: white; 
   text-shadow: black 0.10em 0.10em 0.10em
+}
+
+.card3 h3{
+  margin-top: 10%;
+}
+
+
+.Saiba-Mais{
+  color: #ffffff;
+}
+
+.Saiba-Mais:hover{
+  text-decoration: underline #FF077E;
+  color: #FF077E;
 }
 
 
@@ -325,18 +298,10 @@ img {
   justify-content: space-around;
 }
 
-/* .titulo-sobreDanca h2{
-  color: #000000;
-  background-color: white;
-} */
-
 .card_img {
   width: 100%;
   height: 50%;
-  
 }
-
-
 
 .sobreDanca-card:hover {
   transform: translateY(-10px);
@@ -388,39 +353,6 @@ img {
   gap: 6rem;
 }
 
-
-
-/* #sobreDanca .container{
-  width: 40%;
-  margin-bottom: 20px;
-  height: 250px;
-  background-color: #ffffff;
-  box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
-  -webkit-box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
-  -moz-box-shadow: -4px 1px 57px -15px rgba(0,0,0,0.79);
-  padding: 20px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: auto;
-  text-align: center;
-  transition: transform 0.3s ease;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-} */
-
-/* #sobreDanca .container .nossos-valores{
-  text-align: start;
-} */
-
-/* .sobreDanca  .card:hover {
-  transform: translateY(-10px);
-} */
-
 #sobreDanca .container h2 {
   text-align: center;
   font-size: 24px;
@@ -458,31 +390,7 @@ img {
   display: block;
   margin-bottom: 5px;
   color: #ffffff;
-} 
-
-/* #sobreDanca .container input[type="text"],
-#sobreDanca .container input[type="email"],
-#sobreDanca .container textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  max-width: 100%;
-} */
-
-/* #sobreDanca .container button[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-} */
-
-/* #sobreDanca .container button[type="submit"]:hover {
-  background-color: #4A1656;
-} */
+}
 
 /* FOOTER */
 

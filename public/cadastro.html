@@ -14,22 +14,22 @@
   <link rel="icon" href="./assets/icon/favicon2.ico" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
-
-<header>
-  <a href="index.html"><img src="assets/img/LogoPraise.png" alt="Logo da Empresa" class="logo"></a>
-  <div class="itemsHeader">
-    <h4><a href="index.html">Início</a></h4>
-    <h4><a href="index.html#sobreDanca">Sobre a Dança</a></h4>
-    <h4><a href="index.html#sobreMim">Sobre a mim</a></h4></div>
-  </div>
-</header>
-<div class="background">
-  <div class="underheader">
-    <div id="options" class="options">
-      <a href="login.html">Login</a>
-      <a href="cadastro.html">Cadastro</a>
+  <header>
+    <a href="index.html"><img src="assets/img/LogoPraise.png" alt="Logo da Empresa" class="logo"></a>
+    <div class="menu-1">
+      <div> <img src="assets/img/elemento.png" alt=""></div>
     </div>
-  </div> 
+
+    <nav class="menu">
+      <ul> <br> <br> 
+        <li><a href="login.html">Login</a></li> <br>
+        <li><a href="index.html">Home</a></li> <br>
+        <li><a href="index.html#sobreMim">Sobre Mim</a></li> <br>
+        <li><a href="index.html#sobreDanca">Sobre a Dança</a></li> <br><br>
+      </ul>
+    </nav>
+  </header>
+
   <!--header fim-->
 
   <div class="login">
@@ -167,4 +167,24 @@
   function sumirMensagem() {
     cardErro.style.display = "none";
   }
+
+   // Seleciona o botão do menu
+const menuToggle = document.querySelector('.menu-1');
+// Seleciona o menu de navegação
+const menu = document.querySelector('.menu');
+
+// Adiciona um evento de clique ao botão do menu
+menuToggle.addEventListener('click', function() {
+  // Alterna a classe 'active' no menu de navegação
+  menu.classList.toggle('active');
+});
+
+// Adiciona um evento de clique ao documento inteiro
+document.addEventListener('click', function(event) {
+  // Verifica se o clique ocorreu fora do menu
+  if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+    // Fecha o menu
+    menu.classList.remove('active');
+  }
+});
 </script>

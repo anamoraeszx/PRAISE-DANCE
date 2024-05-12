@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="shortcut icon" href="assets/img/2.png" type="image/x-icon">
+    <title>PRAISE DANCE| Home</title>
+</head>
+<body>
+  <header> 
+    
+    <div class="itemsHeader"> 
+      <a href="index.html#sobreMim">Voltar</a>
+    </div>
+  
+    <div class="menu-1">
+      <div> <img src="assets/img/elemento.png" alt=""></div>
+    </div>
+  
+    <nav class="menu">
+      <ul> <br> <br> 
+        <li><a href="index.html">Home</a></li> <br>
+        <li><a href="login.html">Login</a></li> <br>
+        <li><a href="cadastro.html">Cadastro</a></li> <br>
+        <li><a href="index.html#sobreMim">Sobre Mim</a></li> <br>
+        <li><a href="index.html#sobreDanca">Sobre Dança</a></li> <br><br>
+      </ul>
+    </nav>  
+  </header>
+
+<div class="container">
+  <div class="card3">
+    <video width="100%" controls>
+      <source src="assets/img/card3.mp4" type="video/mp4"></video>
+  </div>
+</div>
+      <center>
+      <p> <br> 
+      A dois anos houve uma super mudança na minha vida, 
+      na qual entrei em um grupo de Dança com uma estrutura enorme.
+      Hoje em dia faço parte do “MahanaDance”, onde uso a dança para me expressar e é uma forma de perder a timidez.<br>
+      Mahanadance com certeza e um grupo muito importante e que faz parte da minha história.
+      </p>
+      </center>
+</body>
+</html>
+<script>
+
+  // Seleciona o botão do menu
+const menuToggle = document.querySelector('.menu-1');
+// Seleciona o menu de navegação
+const menu = document.querySelector('.menu');
+
+// Adiciona um evento de clique ao botão do menu
+menuToggle.addEventListener('click', function() {
+  // Alterna a classe 'active' no menu de navegação
+  menu.classList.toggle('active');
+});
+
+// Adiciona um evento de clique ao documento inteiro
+document.addEventListener('click', function(event) {
+  // Verifica se o clique ocorreu fora do menu
+  if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+    // Fecha o menu
+    menu.classList.remove('active');
+  }
+});
+</script>

@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  height: 100vh;
+  background-image: url("../assets/img/beckgroud2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  position: relative;
+  height: 75px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  z-index: 1;
+  }
+
+.menu-1 {
+  display: flex;
+  cursor: pointer;
+  width: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 3%;
+  margin-top: 4.5%;
+  }
+  
+.menu {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px; /* Largura do menu */
+    height: 100%; /* Altura igual à altura da tela */
+    background-color: #FF077E; /* Cor de fundo do menu */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
+    border-radius: 2%;;
+    
+  }
+  
+.menu ul li {
+    margin-right: 30px; /* Espaçamento entre os itens da lista */
+    border-bottom: 1px solid black; /* Adicionar uma linha inferior */
+  }
+  
+.menu.active {
+    display: block; /* Exibido quando ativo */
+  }
+  
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+.menu li {
+    padding: 10px;
+  }
+  
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 3vh;
+  }
+  
+.menu a:hover {
+    color: #0C163B;
+  }
+
+.itemsHeader {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10%;
+  font-size: 30px;
+  white-space: nowrap;
+  margin-top: 2vh;
+  padding: 8vh;
+  }
+
+.itemsHeader a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+.itemsHeader a:hover {
+    text-decoration: underline #FF077E;
+    color: #FF077E;
+  }
+  
+img {
+    top: 0;
+    height: 200px;
+    width: 145px;
+    clip-path: inset(50px 20px 69px 0 round 50px);
+  }
+  
+.card1 {
+  width: 700px; /* Defina a largura desejada para o card */
+  height: 350px; /* Defina a altura desejada para o card */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  }
+
+  .card2 {
+    width: 700px; /* Defina a largura desejada para o card */
+    height: 350px; /* Defina a altura desejada para o card */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+    -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+    -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  }
+
+  .card3 {
+    width: 700px; /* Defina a largura desejada para o card */
+    height: 350px; /* Defina a altura desejada para o card */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+    -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+    -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+    
+  }
+
+  .container {
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 20px;
+    padding-top: -50px;
+  }
+
+  
+  

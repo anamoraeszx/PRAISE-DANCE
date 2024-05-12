@@ -13,15 +13,25 @@
       <div class="itemsHeader">
         <h4><a href="index.html" >Início</a></h4>
         <h4><a href="#" id="linkSobreDanca">Sobre a Dança</a></h4>
-        <h4><a href="#"" id="linkSobreMim">Sobre mim</a></h4></div>
-      <button class="itens2-cadastro" onclick="cadastro()"> <h4>Cadastro</h4></button>
-      <button class="itens2-login" onclick="login()"><h4> Login</h4></button></div>
-    </header>
-   
-    <div class="background">
-      <div class="container-main">
-        <img src="assets/img/2.png" alt="logo" class="logosite"> </div>
+        <h4><a href="#"" id="linkSobreMim">Sobre mim</a></h4>
+</div>
+      <div class="menu-1">
+        <div> <img src="assets/img/elemento.png" alt=""></div>
       </div>
+
+      <nav class="menu">
+        <ul> <br> <br> 
+          <li><a href="login.html">Login</a></li> <br>
+          <li><a href="cadastro.html">Cadastro</a></li> <br>
+          <li><a href="index.html#sobreMim">Sobre Mim</a></li> <br>
+          <li><a href="index.html#sobreDanca">Sobre Dança</a></li> <br><br>
+        </ul>
+      </nav>
+
+    </header>
+    <div class="background"><center>
+        <img src="assets/img/2.png" alt="logo" class="logosite"> 
+      </div></center>
    
 
     <section id="sobreMim">
@@ -29,21 +39,28 @@
       <div class="sobreMim-container">
         <div class="sobreMim-card card1">
           <h3>  Oque a Dança significa para mim</h3>
-          <p>
-           ..
+          <p> <br>
+            Pra mim a Dança sempre foi um refúgio, é uma forma de persistência, pois não é uma coisa fácil porém é uma forma de passar por cima dos meus medos, inseguranças e vergonha.
+<br> <br>
+            Quando estou dançando é como se tudo tivesse parado e uma paz tivesse se instalado.
+           <br> <br>
+            <a href="card1.html" class="Saiba-Mais"> Saiba-Mais</a> </p> 
           </p>
         </div>
         <div class="sobreMim-card card2">
           <h3>  Quando a Dança surgiu para mim</h3>
           <p> <br>
-Desde os cinco anos, fui influenciada por amigas a entrar em um grupo de dança, o que despertou minha curiosidade. 
-<br> <br> Hoje, a dança é uma das coisas mais importantes da minha vida, proporcionando expressão, conexão e alegria essenciais para minha jornada pessoal e emocional.
-          </p>
+      Desde os cinco anos, fui influenciada por amigas a entrar em um grupo de dança, o que despertou minha curiosidade. 
+      <br> <br> Hoje, a dança é uma das coisas mais importantes da minha vida, proporcionando expressão, conexão e alegria essenciais para minha jornada pessoal e emocional. <br> <br>
+      <a href="card2.html" class="Saiba-Mais"> Saiba-Mais</a> </p> 
         </div>
         <div class="sobreMim-card card3">
           <h3>A Dança para mim atualmente</h3>
-          <p>
-            
+          <p> <br> A dois anos houve uma super mudança na minha vida, na qual entrei em um novo grupo de Dança.
+            <br><br>
+            Hoje em dia faço parte do “MahanaDance”, onde uso a dança para me expressar e é uma forma de perder a timidez. Mahanadance com certeza e um grupo muito importante e que faz parte da minha história.
+          <br><br>
+            <a href="card3.html" class="Saiba-Mais"> Saiba-Mais</a> </p> 
           </p>
         </div>
       </div>
@@ -80,12 +97,41 @@ Desde os cinco anos, fui influenciada por amigas a entrar em um grupo de dança,
 </html>
 <script>
 
-  function cadastro(){
+  /*function cadastro(){
     window.location.href= 'cadastro.html' ;
   }
 function login(){
     window.location.href= 'login.html' ;
+  }*/
+ /* function opcaoHeader() {
+    var options = document.getElementById("options");
+    if (options.style.display === "block") {
+      options.style.display = "none";
+    } else {
+      options.style.display = "block";
+    }
+  }*/
+
+  // Seleciona o botão do menu
+const menuToggle = document.querySelector('.menu-1');
+// Seleciona o menu de navegação
+const menu = document.querySelector('.menu');
+
+// Adiciona um evento de clique ao botão do menu
+menuToggle.addEventListener('click', function() {
+  // Alterna a classe 'active' no menu de navegação
+  menu.classList.toggle('active');
+});
+
+// Adiciona um evento de clique ao documento inteiro
+document.addEventListener('click', function(event) {
+  // Verifica se o clique ocorreu fora do menu
+  if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+    // Fecha o menu
+    menu.classList.remove('active');
   }
+});
+
 
   // Função para rolar suavemente para uma seção
   function scrollToSection(sectionId) {
