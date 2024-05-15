@@ -11,7 +11,7 @@ CREATE DATABASE PRAISE_DANCE;
 USE PRAISE_DANCE;
 
 CREATE TABLE usuario (
-	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR (45),
 	cpf CHAR (11),
 	email VARCHAR (45),
@@ -43,7 +43,7 @@ CREATE TABLE Resposta(
 	fkUsuario INT,
 	fkPergunta INT,
 	primary key (idResposta, fkUsuario, fkPergunta),
-	FOREIGN KEY (fkUsuario) REFERENCES Usuario(idUsuario),
+	FOREIGN KEY (fkUsuario) REFERENCES usuario(id),
 	FOREIGN KEY (fkPergunta) REFERENCES Pergunta(idPergunta)
 );
 

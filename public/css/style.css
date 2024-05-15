@@ -10,6 +10,8 @@
 
 body {
   height: 100vh;
+  width: 100%;
+  overflow: auto;
   background-image: url("../assets/img/beckgroud2.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -198,7 +200,7 @@ text-align: center;
 }
 
 .card1 h3{
-  margin-top: 11%;
+  margin-top: 140%;
 }
 
 
@@ -231,7 +233,7 @@ text-align: center;
 }
 
 .card3 h3{
-  margin-top: 10%;
+  margin-top: 140%;
 }
 
 
