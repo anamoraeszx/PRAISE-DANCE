@@ -10,10 +10,10 @@
 
 
 body {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   overflow: auto;
-  background-image: url("../assets/img/beckgroud2.png");
+  background-image: url("../assets/img/backgroud\ \(2\).png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -133,7 +133,7 @@ img {
 }
 
 .menu a:hover {
-  color: #0C163B;
+  color: #1b2021;
 }
 
 /* MAIN */
@@ -201,6 +201,7 @@ text-align: center;
   color: #fff;
   font-size: 35px;
   font-family: "Cinzel", serif;
+  text-align: left;
 }
 
 .sobreMim-texto p{
@@ -224,8 +225,10 @@ text-align: center;
   justify-content: space-around;
 }
 
-.titulo{
-  text-shadow: 1px 2px 2px #FF077E;
+
+.titulo {
+  
+  background-clip: text;
   padding-bottom: 5rem;  
   font-family: "Cinzel", serif;
 
@@ -281,8 +284,8 @@ text-align: center;
 }
 
 .Saiba-Mais:hover{
-  text-decoration: underline #FF077E;
-  color: #FF077E;
+  text-decoration: underline #89023e;
+  color: #89023e;
 }
 
 
@@ -302,16 +305,19 @@ text-align: center;
 }
 
 #sobreMim{
-  background-color: #0C163B;
+  background-color: #1b2021;
   padding-top: 50px;
   padding-bottom: 100px;
   text-align: center;
 }
 
 #sobreMim h2 {
-  color: #fff;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  font-family: 'Cinzel', serif;
+  background: #ffffff;
+  background-clip: text;
+  color: transparent;
 }
 
 /* SOBRE NÓS */
@@ -373,7 +379,7 @@ text-align: center;
 
 
  #sobreDanca {
-  background-color: #0C163B;
+  background-color: #89023e;
   padding: 50px 0;
   color: #fff;
  }
@@ -437,7 +443,7 @@ text-align: center;
 
 .footer {
   height: 80px;
-  background-color: #FF077E;
+  background-color: #89023e;
   color: #fff;
   display: flex;
   align-items: center;
