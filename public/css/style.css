@@ -70,8 +70,8 @@ header {
 }
 
 .itemsHeader a:hover {
-  text-decoration: underline #FF077E;
-  color: #FF077E;
+  text-decoration: underline #89023e;
+  color: #89023e;
 }
 
 img {
@@ -101,7 +101,7 @@ img {
   right: 0;
   width: 300px; /* Largura do menu */
   height: 100%; /* Altura igual à altura da tela */
-  background-color: #FF077E; /* Cor de fundo do menu */
+  background-color: #89023e; /* Cor de fundo do menu */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
   border-radius: 2%;;
   
@@ -154,7 +154,7 @@ text-align: center;
 }
 
 .container-main h1 span {
-  color: #FF077E;
+  color: #89023e;
 }
 
 .container-main p {
@@ -162,7 +162,7 @@ text-align: center;
 }
 
 .container-main p span {
-  color: #FF077E;
+  color: #89023e;
   font-weight: 800;
 }
 
@@ -207,6 +207,11 @@ text-align: center;
 .sobreMim-texto p{
   color: #ffff;
   text-align: left;
+}
+
+.sobreMim-texto a{
+  text-align: left;
+ 
 }
 
 .sobreMim-card {
