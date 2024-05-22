@@ -286,11 +286,17 @@ text-align: center;
 
 .Saiba-Mais{
   color: #ffffff;
+  background-color: #89023e;
+  border: 2px solid #89023e;
+  border-radius: 20px;
+  padding: 10px 15px;
+  width: 19%;
 }
 
 .Saiba-Mais:hover{
-  text-decoration: underline #89023e;
-  color: #89023e;
+  /* text-decoration: underline #89023e; */
+  color: #fff;
+  background-color: transparent;
 }
 
 
