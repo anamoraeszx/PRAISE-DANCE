@@ -75,26 +75,27 @@ header {
 }
 
 .menu {
-  display: none; /* Inicialmente oculto */
+  pointer-events: none;
+  opacity: 0;
   position: fixed;
   top: 0;
   right: 0;
-  width: 300px; /* Largura do menu */
-  height: 100%; /* Altura igual à altura da tela */
-  background-color: #FF077E; /* Cor de fundo do menu */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
-  border-radius: 2%;;
-  
+  width: 300px;
+  height: 100%;
+  background-color: #89023e;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2%;
+  transition: opacity 0.3s ease; /* Adiciona transição de opacidade */
 }
 
+.menu.active {
+  opacity: 1; /* Torna o menu visível */
+}
 .menu ul li {
   margin-right: 30px; /* Espaçamento entre os itens da lista */
   border-bottom: 1px solid black; /* Adicionar uma linha inferior */
 }
 
-.menu.active {
-  display: block; /* Exibido quando ativo */
-}
 
 .menu ul {
   list-style-type: none;
