@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
 
 * {
   margin: 0;
@@ -9,11 +12,11 @@
 
 body {
   height: 100vh;
-  background-image: url("../assets/img/beckgroud2.png");
+  background-image: url("../assets/img/backgroud\ \(2\).png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Cinzel", serif;
 }
 
 header {
@@ -45,7 +48,7 @@ header {
     right: 0;
     width: 300px; /* Largura do menu */
     height: 100%; /* Altura igual à altura da tela */
-    background-color: #FF077E; /* Cor de fundo do menu */
+    background-color: #89023e; /* Cor de fundo do menu */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
     border-radius: 2%;;
     
@@ -97,8 +100,8 @@ header {
   }
   
 .itemsHeader a:hover {
-    text-decoration: underline #FF077E;
-    color: #FF077E;
+    text-decoration: underline #89023e;
+    color: #89023e;
   }
   
 img {
@@ -110,39 +113,30 @@ img {
   
 .card1 {
   width: 700px; /* Defina a largura desejada para o card */
-  height: 350px; /* Defina a altura desejada para o card */
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
-  -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
-  -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+  height: 250px; /* Defina a altura desejada para o card */
+  position: absolute;
+  top: -20px;
   }
 
   .card2 {
     width: 700px; /* Defina a largura desejada para o card */
-    height: 350px; /* Defina a altura desejada para o card */
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
-    -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
-    -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+    height: 250px; /* Defina a altura desejada para o card */
+    position: absolute;
+    top: -20px;
   }
 
   .card3 {
     width: 700px; /* Defina a largura desejada para o card */
-    height: 350px; /* Defina a altura desejada para o card */
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
-    -webkit-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
-    -moz-box-shadow: -4px 1px 57px 25px rgba(0,0,0,0.79);
+    height: 250px; /* Defina a altura desejada para o card */
+    position: absolute;
+    top: -20px;
     
   }
 
   .container {
     position: relative;
     width: 100vw;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,5 +149,19 @@ img {
     padding-top: -50px;
   }
 
+  .card{
+    width: 70%;
+    background-color: rgba(255,255,255, 0.1 );
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #FFff;
+    flex-direction: column;
+    height: fit-content;
+    padding: 20px 0;
+    backdrop-filter: blur(10px);
+    border: 3px solid #1B2021
+  }
   
   
