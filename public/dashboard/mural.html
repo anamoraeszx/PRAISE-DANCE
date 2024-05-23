@@ -2,249 +2,298 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Avisos</title>
+      <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>PRAISE DANCE| Quiz</title>
 
-    <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
-    <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
+      <link rel="stylesheet" href="../css/dashboards.css">
+      <link rel="stylesheet" href="./../css/estilo.css" />
+      <script src="../js/sessao.js"></script>
+      <script src="./../js/alerta.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link
+            href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+      <!-- scripts do Chart.js - 2022-1 -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <!--FONT AWESOME-->
+      <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
+<body>
+      <div class="janela">
+                        <div class="header-left">
+        <img class="imgJanela" src="../assets/img/3.png" alt="">
 
-    <div class="janela">
-
-
-        <div class="header-left">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+        <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
         </div>
 
-        <div class="dash-right">
-
-
-            <div class="avisos">
-                <div id="alerta">
-                </div>
-                <div class="container">
-                    <h1>Publicar um aviso</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                Título:
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <br>
-                            <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Mural de Avisos</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="btn-nav-white">
+            <a href="./cards.html">
+                <h3>Main Page</h3>
+            </a>
         </div>
+        
+        <div class="btn-nav">
+            <a href="./mural.html">
+                <h3>Quiz</h3>
+            </a>
+        </div>
+
+        <div class="btn-nav-white">
+            <a href="./dashboard.html">
+                <h3>Gráficos</h3>
+            </a>
+        </div>
+
+       
+
+        <div class="btn-logout" onclick="limparSessao()">
+            <h3>Sair</h3>
+        </div>
+
     </div>
 
+   <div class="dash">
+                  <div id="quizContainer">
+                        <div id="inicarQuiz">
+                              <h1>Quiz Praise-Dance</h1>
+                              <p>O que você sabe sobre Dança?</p>
+                              <button onclick="iniciar()">play</button>
+                        </div>
+                        <div id="quiz" style="display: none;">
+                              <div id="pergunta1" class="pergunta">
+                                    <h2>...</h2>
+                                    <button onclick="responder('pergunta1', false)">...</button>
+                                    <button onclick="responder(this, `...`)">...</button>
+                                    <button onclick="responder('pergunta1', false)">...</button>
+                                    <button onclick="responder('pergunta1', false)">...</button>
+                              </div>
+
+                              <div id="pergunta2" class="pergunta" style="display: none;">
+                                    <h2>...</h2>
+                                    <button onclick="responder('pergunta2', false)">...</button>
+                                    <button onclick="responder('pergunta2', false)">...</button>
+                                    <button onclick="responder(this, '...')">...</button>
+                                    <button onclick="responder('pergunta2', false)">...</button>
+                              </div>
+
+                              <div id="pergunta3" class="pergunta" style="display: none;">
+                                    <h2>...</h2>
+                                    <button onclick="responder('pergunta3', false)">...</button>
+                                    <button
+                                          onclick="responder(this, '...')">O
+                                          ...</button>
+                                    <button onclick="responder('pergunta3', false)">...</button>
+                                    <button onclick="responder('pergunta3', false)">...</button>
+                              </div>
+
+                              <div id="pergunta4" class="pergunta" style="display: none;">
+                                    <h2>...</h2>
+                                    <button onclick="responder('pergunta4', false)">...</button>
+                                    <button onclick="responder('pergunta4', false)">...</button>
+                                    <button onclick="responder('pergunta4', false)">...</button>
+                                    <button onclick="responder(this, '...')">.../button>
+                              </div>
+
+                              <div id="pergunta5" class="pergunta" style="display: none;">
+                                    <h2>...?</h2>
+                                    <button onclick="responder('pergunta5', false)">3</button>
+                                    <button onclick="responder(this, 6)">6</button>
+                                    <button onclick="responder('pergunta5', false)">8</button>
+                                    <button onclick="responder('pergunta5', false)">10</button>
+                              </div>
+
+                              <div id="pergunta6" class="pergunta" style="display: none;">
+                                    <h2>...</h2>
+                                    <button onclick="responder('pergunta6', false)">1</button>
+                                    <button onclick="responder('pergunta6', false)">2</button>
+                                    <button onclick="responder('pergunta6', false)">4</button>
+                                    <button onclick="responder(this, 3)">3</button>
+                              </div>
+
+                              <div id="pergunta7" class="pergunta" style="display: none;">
+                                    <h2>...</h2>
+                                    <button onclick="responder('pergunta7', false)">...</button>
+                                    <button onclick="responder('pergunta7', false)">...</button>
+                                    <button onclick="responder(this, `...`)">...</button>
+                                    <button onclick="responder('pergunta7', false)">...</button>
+                              </div>
+
+                              <div id="pergunta8" class="pergunta" style="display: none;">
+                                    <h2>...</h2>
+                                    <button onclick="responder(this, 'Rogério Ceni, Telê Santana, Raí')">..
+                                          ...</button>
+                                    <button onclick="responder('pergunta8', false)">Morumbi, Pacaembu, Vila Belmiro</button>
+                                    <button onclick="responder('pergunta8', false)">São Paulo, Corinthians, Palmeiras</button>
+                                    <button onclick="responder('pergunta8', false)">Telê Santana, Muricy Ramalho, Paulo
+                                          ...</button>
+                              </div>
+
+                              <div id="pergunta9" class="pergunta" style="display: none;">
+                                    <h2>E quem marcou mais gol com a camisa?</h2>
+                                    <button onclick="responder('pergunta9', false)">Luis Fabiano</button>
+                                    <button onclick="responder('pergunta9', false)">Serginho Chulapa</button>
+                                    <button onclick="responder(this, 'Goleador')">Goleador</button>
+                                    <button onclick="responder('pergunta9', false)">Cícero</button>
+                              </div>
+
+                              <div id="pergunta10" class="pergunta" style="display: none;">
+                                    <h2>Maior Rival?</h2>
+                                    <button onclick="responder(this, 'Corinthians')">Corinthians</button>
+                                    <button onclick="responder('pergunta10', false)">Palmeiras</button>
+                                    <button onclick="responder('pergunta10', false)">Santos</button>
+                                    <button onclick="responder('pergunta10', false)">Flamengo</button>
+                              </div>
+
+                        </div>
+                        <div id="resultados" style="display: none;">
+                              <h2>Resultados do Quiz</h2>
+                              <canvas id="graficoResultados"></canvas>
+                              <div id="indicadores">
+                                    <p>Média de acertos: <span id="media"></span></p>
+                                    <p>Você está <span id="acimaOuAbaixo"></span> da média.</p>
+                                    <p>Desempenho: <span id="desempenho"></span></p>
+                              </div>
+                              <button onclick="voltar()">Voltar</button>
+                        </div>
+                  </div>
 
 
+            </div>
+      </div>
 
+      <script>
+            b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+            let respostasCorretas = 0;
+            let respostasIncorretas = 0;
+
+            function iniciar() {
+                  document.getElementById('inicarQuiz').style.display = 'none';
+                  document.getElementById('quiz').style.display = 'block';
+            }
+
+            let perguntaAtual = 1;
+            let totalDePergutas = 10;
+
+            function responder(botao, respostaCorreta) {
+                  const respostaSelecionada = botao.textContent;
+                  if (respostaSelecionada === respostaCorreta) {
+                        respostasCorretas++;
+                  } else {
+                        respostasIncorretas++;
+                  }
+
+                  document.getElementById("pergunta" + perguntaAtual).style.display = "none";
+
+                  if (perguntaAtual < totalDePergutas) {
+                        perguntaAtual++;
+                        document.getElementById("pergunta" + perguntaAtual).style.display = "block";
+                  } else {
+                        exibirResultados();
+                  }
+            }
+
+            function obterIdUsuario() {
+                  return sessionStorage.ID_USUARIO;
+            }
+
+            function exibirResultados() {
+                  const fk_usuario = obterIdUsuario();
+
+                  document.getElementById("quiz").style.display = "none";
+                  document.getElementById("resultados").style.display = "block";
+
+                  const totalRespostas = respostasCorretas + respostasIncorretas;
+                  const media = (respostasCorretas / totalRespostas) * 100;
+                  document.getElementById("media").textContent = media.toFixed(2) + "%";
+
+                  const mediaGeral = 70;
+                  if (media >= mediaGeral) {
+                        document.getElementById("acimaOuAbaixo").textContent = "acima";
+                  } else {
+                        document.getElementById("acimaOuAbaixo").textContent = "abaixo";
+                  }
+
+                  let desempenho = '';
+                  if (media >= 80) {
+                        desempenho = 'Bom';
+                  } else if (media >= 50) {
+                        desempenho = 'Médio';
+                  } else {
+                        desempenho = 'Ruim';
+                  }
+                  document.getElementById("desempenho").textContent = desempenho;
+
+                  fetch('/medidas/salvar-resultados', {
+                        method: 'POST',
+                        headers: {
+                              'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                              acertos: respostasCorretas,
+                              erros: respostasIncorretas,
+                              fk_usuario: fk_usuario
+                        })
+                  })
+                        .then(response => {
+                              if (!response.ok) {
+                                    throw new Error('Erro ao salvar resultados');
+                              }
+                              return response.json();
+                        })
+                        .then(data => {
+                              console.log('Resultados salvos com sucesso:', data);
+                        })
+                        .catch(error => {
+                              console.error('Erro ao salvar resultados:', error);
+                        });
+
+                  const ctx = document.getElementById('graficoResultados').getContext('2d');
+                  const quizChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                              labels: ['Respostas Corretas', 'Respostas Incorretas'],
+                              datasets: [{
+                                    label: 'Quantidade',
+                                    data: [respostasCorretas, respostasIncorretas],
+                                    backgroundColor: [
+                                          'rgba(75, 192, 192)',
+                                          'rgba(255, 99, 132)',
+                                    ],
+                                    borderColor: [
+                                          'rgba(75, 192, 192, 1)',
+                                          'rgba(255, 99, 132, 1)',
+                                    ],
+                                    borderWidth: 1
+                              }]
+                        },
+                        options: {
+                              scales: {
+                                    y: {
+                                          beginAtZero: true
+                                    }
+                              }
+                        }
+                  });
+            }
+
+            function voltar() {
+                  window.location.href = './mainPage.html';
+            }
+      </script>
 </body>
 
 </html>
 
-<script>
-    
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    function limparFormulario() {
-        document.getElementById("form_postagem").reset();
-    }
-
-    function publicar() {
-        var idUsuario = sessionStorage.ID_USUARIO;
-
-        var corpo = {
-            titulo: form_postagem.titulo.value,
-            descricao: form_postagem.descricao.value
-        }
-
-        fetch(`/avisos/publicar/${idUsuario}`, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(corpo)
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
-                limparFormulario();
-                finalizarAguardar();
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
-
-        return false;
-
-    }
-
-    function editar(idAviso) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-        console.log("cliquei em editar - " + idAviso);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
-        window.location = "/dashboard/edicao-aviso.html"
-
-    }
-
-    function deletar(idAviso) {
-        console.log("Criar função de apagar post escolhido - ID" + idAviso);
-        fetch(`/avisos/deletar/${idAviso}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(function (resposta) {
-
-            if (resposta.ok) {
-                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
-                window.location = "/dashboard/mural.html"
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-    }
-
-    function atualizarFeed() {
-        fetch("/avisos/listar").then(function (resposta) {
-            if (resposta.ok) {
-                if (resposta.status == 204) {
-                    var feed = document.getElementById("feed_container");
-                    var mensagem = document.createElement("span");
-                    mensagem.innerHTML = "Nenhum resultado encontrado."
-                    feed.appendChild(mensagem);
-                    throw "Nenhum resultado encontrado!!";
-                }
-
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                    var feed = document.getElementById("feed_container");
-                    feed.innerHTML = "";
-                    for (let i = 0; i < resposta.length; i++) {
-                        var publicacao = resposta[i];
-
-                        // criando e manipulando elementos do HTML via JavaScript
-                        var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
-                        var spanTitulo = document.createElement("span");
-                        var spanNome = document.createElement("span");
-                        var divDescricao = document.createElement("div");
-                        var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
-                        var btnDeletar = document.createElement("button");
-
-
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
-
-                        divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
-                        spanNome.className = "publicacao-nome";
-                        spanTitulo.className = "publicacao-titulo";
-                        divDescricao.className = "publicacao-descricao";
-
-                        divButtons.className = "div-buttons"
-
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
-
-                        btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
-
-                        divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
-                        divPublicacao.appendChild(divDescricao);
-                        divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
-                        feed.appendChild(divPublicacao);
-                    }
-
-                    finalizarAguardar();
-                });
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-            finalizarAguardar();
-        });
-    }
-
 </script>
+</body>
+
+</html>

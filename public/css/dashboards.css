@@ -44,7 +44,7 @@ body {
 
 .dash-right .avisos .div-form textarea {
   width: 95%;
-  border: 3px solid #e6005a;
+  border: 3px solid #89023E;
   background-color: white;
   border-radius: 5px;
 }
@@ -58,7 +58,7 @@ body {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #89023E;
   width: 120px;
 }
 
@@ -71,7 +71,7 @@ body {
   font-size: 14px;
   padding: 5px 8px;
   color: white;
-  background-color: #e6005a;
+  background-color: #89023E;
   width: 80px;
 }
 
@@ -82,7 +82,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  border-bottom: 3px solid #e6005a;
+  border-bottom: 3px solid #89023E;
   padding: 20px;
 }
 
@@ -125,15 +125,7 @@ body {
   overflow: auto;
 }
 
-.area-parametros-alerta {
-  /* border: 2px solid pink; */
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: auto;
-  margin-top: 10px;
-  background-color: #212124;
-}
+
 
 .area-parametros-alerta .titulo-legenda {
   color: white;
@@ -166,25 +158,7 @@ body {
   font-weight: 800;
 }
 
-.perigo-frio {
-  background-color: #5c6bc0;
-}
 
-.perigo-quente {
-  background-color: #ff7043;
-}
-
-.alerta-frio {
-  background-color: #42a5f5;
-}
-
-.alerta-quente {
-  background-color: #ffee58;
-}
-
-.ideal {
-  background-color: #9ccc65;
-}
 
 .cards {
   display: flex;
@@ -286,7 +260,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: #e6005a;
+  color: #89023E;
   background-color: white;
   margin: 5px;
   border-radius: 3px;
@@ -295,11 +269,11 @@ body {
 
 .btn-pink {
   color: white;
-  background-color: #e6005a;
+  background-color: #89023E;
 }
 
 .btn-white {
-  color: #e6005a;
+  color: #89023E;
   background-color: white;
 
 }
@@ -348,15 +322,16 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 1px solid #89023E;
+  background-color: #1B2021;
+
 }
 
 .dash-right {
   display: flex;
   width: 70%;
   height: fit-content;
-  background-color: #161618;
+  background-color: #1B2021;
   position: relative;
   top: 0;
   left: 25%;
@@ -364,18 +339,18 @@ canvas {
   overflow: auto;
 }
 
-.header-left h1 {
-  color: #32b9cd;
-}
+
 
 .hello {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+  top: -55px;
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: #ffffff;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -387,23 +362,25 @@ canvas {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: #89023E;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  margin: 20px;
 }
 
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid #89023E;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
+  margin: 20px;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #89023E;
   padding: 0;
   margin: 0;
 }
@@ -418,11 +395,20 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #89023E;
   color: white;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+}
+
+.imgJanela{
+width: 85%;
+height: 65%;
+display: flex;
+justify-content: center;
+padding: 10px 0 0;
+
 }
