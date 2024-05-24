@@ -8,7 +8,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>PRAISE DANCE| Quiz</title>
 
-      <link rel="stylesheet" href="../css/quiz.css">
+      <link rel="stylesheet" href="../css/dashboards.css">
       
       <script src="../js/sessao.js"></script>
       <script src="./../js/alerta.js"></script>
@@ -26,150 +26,62 @@
 </head>
 
 <body>
-      <div class="janela">
-                        <div class="header-left">
-        <img class="imgJanela" src="../assets/img/3.png" alt="">
+    <header>
+    
+    <div class="menu-1">
+        <div> <img class="img" src="../assets/img/elemento.png" alt=""></div>
+      </div>
+  
+      <nav class="menu">
 
-        <div class="hello">
-            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-        </div>
+        <img class="imgJanela" src="../assets/img/2.png" alt="">
 
-        <div class="btn-nav-white">
-            <a href="./cards.html">
-                <h3>Main Page</h3>
-            </a>
-        </div>
-        
-        <div class="btn-nav">
-            <a href="./quiz.html">
-                <h3>Quiz</h3>
-            </a>
-        </div>
+        <ul> <br> <br> 
+          <div class="btn-nav-white">
+          <a href="cards.html"><h3> MAIN PAGE </h3>
+          </a></div>
 
-        <div class="btn-nav-white">
-            <a href="./dashboard.html">
-                <h3>Gráficos</h3>
-            </a>
-        </div>
+          <div class="btn-nav">
+          <a href="quiz.html"> <h3>QUIZ</h3>
+          </a></div>
 
-       
-
-        <div class="btn-logout" onclick="limparSessao()">
-            <h3>Sair</h3>
-        </div>
-
+          <div class="btn-nav-white">
+          <a href="dashboard.html"> <h3>grafico</h3>
+          </a></div>
+          <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+          </div>
+        </ul>
+      </nav>
+    </header>
     </div>
+    <body>
+        
+    </body>
 
-   <div class="dash"> <center>
-                  <div id="quizContainer">
-                        <div id="inicarQuiz">
-                              <h1>Quiz Praise-Dance</h1>
-                              <p>O que você sabe sobre Dança?</p>
-                              <button class="botao" onclick="iniciar()">play</button>
-                        </div></center>
-                        <div id="quiz" style="display: none;">
-                              <div id="pergunta1" class="pergunta">
-                                    <h2>...</h2>
-                                    <button onclick="responder('pergunta1', false)">...</button>
-                                    <button onclick="responder(this, `...`)">...</button>
-                                    <button onclick="responder('pergunta1', false)">...</button>
-                                    <button onclick="responder('pergunta1', false)">...</button>
-                              </div>
-
-                              <div id="pergunta2" class="pergunta" style="display: none;">
-                                    <h2>...</h2>
-                                    <button onclick="responder('pergunta2', false)">...</button>
-                                    <button onclick="responder('pergunta2', false)">...</button>
-                                    <button onclick="responder(this, '...')">...</button>
-                                    <button onclick="responder('pergunta2', false)">...</button>
-                              </div>
-
-                              <div id="pergunta3" class="pergunta" style="display: none;">
-                                    <h2>...</h2>
-                                    <button onclick="responder('pergunta3', false)">...</button>
-                                    <button
-                                          onclick="responder(this, '...')">O
-                                          ...</button>
-                                    <button onclick="responder('pergunta3', false)">...</button>
-                                    <button onclick="responder('pergunta3', false)">...</button>
-                              </div>
-
-                              <div id="pergunta4" class="pergunta" style="display: none;">
-                                    <h2>...</h2>
-                                    <button onclick="responder('pergunta4', false)">...</button>
-                                    <button onclick="responder('pergunta4', false)">...</button>
-                                    <button onclick="responder('pergunta4', false)">...</button>
-                                    <button onclick="responder(this, '...')">.../button>
-                              </div>
-
-                              <div id="pergunta5" class="pergunta" style="display: none;">
-                                    <h2>...?</h2>
-                                    <button onclick="responder('pergunta5', false)">3</button>
-                                    <button onclick="responder(this, 6)">6</button>
-                                    <button onclick="responder('pergunta5', false)">8</button>
-                                    <button onclick="responder('pergunta5', false)">10</button>
-                              </div>
-
-                              <div id="pergunta6" class="pergunta" style="display: none;">
-                                    <h2>...</h2>
-                                    <button onclick="responder('pergunta6', false)">1</button>
-                                    <button onclick="responder('pergunta6', false)">2</button>
-                                    <button onclick="responder('pergunta6', false)">4</button>
-                                    <button onclick="responder(this, 3)">3</button>
-                              </div>
-
-                              <div id="pergunta7" class="pergunta" style="display: none;">
-                                    <h2>...</h2>
-                                    <button onclick="responder('pergunta7', false)">...</button>
-                                    <button onclick="responder('pergunta7', false)">...</button>
-                                    <button onclick="responder(this, `...`)">...</button>
-                                    <button onclick="responder('pergunta7', false)">...</button>
-                              </div>
-
-                              <div id="pergunta8" class="pergunta" style="display: none;">
-                                    <h2>...</h2>
-                                    <button onclick="responder(this, 'Rogério Ceni, Telê Santana, Raí')">..
-                                          ...</button>
-                                    <button onclick="responder('pergunta8', false)">Morumbi, Pacaembu, Vila Belmiro</button>
-                                    <button onclick="responder('pergunta8', false)">São Paulo, Corinthians, Palmeiras</button>
-                                    <button onclick="responder('pergunta8', false)">Telê Santana, Muricy Ramalho, Paulo
-                                          ...</button>
-                              </div>
-
-                              <div id="pergunta9" class="pergunta" style="display: none;">
-                                    <h2>E quem marcou mais gol com a camisa?</h2>
-                                    <button onclick="responder('pergunta9', false)">Luis Fabiano</button>
-                                    <button onclick="responder('pergunta9', false)">Serginho Chulapa</button>
-                                    <button onclick="responder(this, 'Goleador')">Goleador</button>
-                                    <button onclick="responder('pergunta9', false)">Cícero</button>
-                              </div>
-
-                              <div id="pergunta10" class="pergunta" style="display: none;">
-                                    <h2>Maior Rival?</h2>
-                                    <button onclick="responder(this, 'Corinthians')">Corinthians</button>
-                                    <button onclick="responder('pergunta10', false)">Palmeiras</button>
-                                    <button onclick="responder('pergunta10', false)">Santos</button>
-                                    <button onclick="responder('pergunta10', false)">Flamengo</button>
-                              </div>
-
-                        </div>
-                        <div id="resultados" style="display: none;">
-                              <h2>Resultados do Quiz</h2>
-                              <canvas id="graficoResultados"></canvas>
-                              <div id="indicadores">
-                                    <p>Média de acertos: <span id="media"></span></p>
-                                    <p>Você está <span id="acimaOuAbaixo"></span> da média.</p>
-                                    <p>Desempenho: <span id="desempenho"></span></p>
-                              </div>
-                              <button onclick="voltar()">Voltar</button>
-                        </div>
-                  </div>
-
-
-            </div>
-      </div>
-
+  
       <script>
+
+  
+          // Seleciona o botão do menu
+          const menuToggle = document.querySelector('.menu-1');
+  // Seleciona o menu de navegação
+    const menu = document.querySelector('.menu');
+
+  // Adiciona um evento de clique ao botão do menu
+  menuToggle.addEventListener('click', function () {
+    // Alterna a classe 'active' no menu de navegação
+    menu.classList.toggle('active');
+  });
+
+  // Adiciona um evento de clique ao documento inteiro
+  document.addEventListener('click', function (event) {
+    // Verifica se o clique ocorreu fora do menu
+    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+      // Fecha o menu
+      menu.classList.remove('active');
+    }
+  })
             b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
             let respostasCorretas = 0;
@@ -288,12 +200,14 @@
             function voltar() {
                   window.location.href = './mainPage.html';
             }
-      </script>
+
+
+ </script>
 </body>
 
 </html>
 
-</script>
+
 </body>
 
 </html>
