@@ -10,7 +10,7 @@
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
+   
 
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
@@ -21,53 +21,47 @@
 </head>
 
 <!-- <body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()"> -->
+<body>
+    <header>
+    
+    <div class="menu-1">
+        <div> <img src="../assets/img/elemento.png" alt=""></div>
+      </div>
+  
+      <nav class="menu">
 
-    <div class="janela">
+        <img class="imgJanela" src="../assets/img/2.png" alt="">
 
-        <div class="header-left dash-header">
+        <ul> <br> <br> 
+          <div class="btn-nav">
+          <a href="cards.html"><h3> MAIN PAGE </h3>
+          </a></div>
 
-        <img class="imgJanela" src="../assets/img/3.png" alt="">
+          <div class="btn-nav-white">
+          <a href="quiz.html"> <h3>QUIZ</h3>
+          </a></div>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Main Page</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Quiz</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
+          <div class="btn-nav-white">
+          <a href="dashboard.html"> <h3>grafico</h3>
+          </a></div>
+          <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+          </div>
+        </ul>
+      </nav>
+    </header>
            
 
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
+            
 
         </div>
 
-        <div class="dash">
-            <div id="alerta">
-            </div>
-          
 
-            <div class="cards" id="cardAquarios">
+   
+    
 
-            </div>
 
-        </div>
-
-    </div>
+    
 
 </body>
 
@@ -90,6 +84,27 @@
                     `
         });
     }
+
+ // Seleciona o botão do menu
+ const menuToggle = document.querySelector('.menu-1');
+  // Seleciona o menu de navegação
+  const menu = document.querySelector('.menu');
+
+  // Adiciona um evento de clique ao botão do menu
+  menuToggle.addEventListener('click', function () {
+    // Alterna a classe 'active' no menu de navegação
+    menu.classList.toggle('active');
+  });
+
+  // Adiciona um evento de clique ao documento inteiro
+  document.addEventListener('click', function (event) {
+    // Verifica se o clique ocorreu fora do menu
+    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+      // Fecha o menu
+      menu.classList.remove('active');
+    }
+  })
+
 
 </script>
 
