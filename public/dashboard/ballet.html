@@ -1,247 +1,301 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+	<head>
+		      
+		<link
+			rel="shortcut icon"
+			href="../assets/icon/favicon2.ico"
+			type="image/x-icon"
+		/>
+		      
+		<meta charset="UTF-8" />
+		      
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		      
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		      
+		<title>PRAISE DANCE | Quiz</title>
 
-<head>
-      <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>PRAISE DANCE | Quiz</title>
+		      
+		<link rel="stylesheet" href="../css/quiz.css" />
+		<!--       <link rel="stylesheet" href="./../css/estilo.css" /> -->
+		      
+		<script src="../js/sessao.js"></script>
+		      
+		<script src="./../js/alerta.js"></script>
 
-      <link rel="stylesheet" href="../css/quiz.css">
-<!--       <link rel="stylesheet" href="./../css/estilo.css" /> -->
-      <script src="../js/sessao.js"></script>
-      <script src="./../js/alerta.js"></script>
+		      
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		      
+		<link
+			            href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			            rel="stylesheet"
+		/>
 
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link
-            href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet">
+		      
+		<!-- scripts do Chart.js - 2022-1 -->
+		      
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-      <!-- scripts do Chart.js - 2022-1 -->
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		      
+		<!--FONT AWESOME-->
+		      
+		<script
+			src="https://kit.fontawesome.com/9f7414eb10.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
 
-      <!--FONT AWESOME-->
-      <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
-</head>
+	<body>
+		<header>
+			<div class="menu-1">
+				<div>
+					<img class="img" src="../assets/img/elemento.png" alt="" />
+				</div>
+			</div>
 
-<body>
-  
+			<nav class="menu">
+				<img class="imgJanela" src="../assets/img/2.png" alt="" />
+				<h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+				<ul>
+					<br />
+					<br />
+					<div class="btn-nav-white">
+						<a href="cards.html"><h3>MAIN PAGE</h3> </a>
+					</div>
 
-<header>
-    <div class="menu-1">
-        <div> <img class="img" src="../assets/img/elemento.png" alt=""></div>
-    </div>
+					<div class="btn-nav">
+						<a href="quiz.html"> <h3>QUIZ</h3> </a>
+					</div>
 
-    <nav class="menu">
+					<div class="btn-nav-white">
+						<a href="dashboard.html"> <h3>grafico</h3> </a>
+					</div>
+					<div class="btn-logout" onclick="limparSessao()">
+						<h3>Sair</h3>
+					</div>
+				</ul>
+			</nav>
+		</header>
+		<div class="quiz">
+			<div class="container">
+				<h1>Quiz de Ballet</h1>
+				<button id="iniciar" class="botao">Iniciar Quiz</button>
+				<div id="pergunta" class="pergunta" style="display: none"></div>
+				<div id="opcoes" class="resposta" style="display: none"></div>
+				<button id="enviar" style="display: none">Enviar</button>
+				<div id="resultado" style="display: none"></div>
+			</div>
+		</div>
 
-    <img class="imgJanela" src="../assets/img/2.png" alt="">
-    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-    <ul> <br> <br> 
-        <div class="btn-nav-white">
-            <a href="cards.html"><h3> MAIN PAGE </h3>
-            </a></div>
-  
-            <div class="btn-nav">
-            <a href="quiz.html"> <h3>QUIZ</h3>
-            </a></div>
-  
-            <div class="btn-nav-white">
-            <a href="dashboard.html"> <h3>grafico</h3>
-            </a></div>
-            <div class="btn-logout" onclick="limparSessao()">
-                  <h3>Sair</h3>
-            </div>
-          </ul>
-        </nav>
-</header>
-<div class="quiz">
-  <div class="container">
-<h1>Quiz de Ballet</h1>
-<button id="iniciar" class="botao">Iniciar Quiz</button>
-<div id="pergunta" class="pergunta" style="display:none;"></div>
-<div id="opcoes" class="resposta" style="display:none;"></div>
-<button id="enviar" style="display:none;">Enviar</button>
-<div id="resultado" style="display:none;"></div>
-</div></div>
+		<footer>
+			<div class="footer">
+				<div class="foo">
+					<p>Oficial PRAISE DANCE - AnaMoraes &copy;</p>
+					<br />
+				</div>
+			</div>
+		</footer>
+	</body>
+	<script>
+		// Seleciona o botão do menu
+		const menuToggle = document.querySelector(".menu-1");
+		// Seleciona o menu de navegação
+		const menu = document.querySelector(".menu");
 
-<footer>
-  <div class="footer">
-    <div class="foo">
-      <p>Oficial PRAISE DANCE - AnaMoraes &copy;</p>
-      <br>
-    </div>
-  </div>
-</footer>
+		// Adiciona um evento de clique ao botão do menu
+		menuToggle.addEventListener("click", function () {
+			// Alterna a classe 'active' no menu de navegação
+			menu.classList.toggle("active");
+		});
 
+		// Adiciona um evento de clique ao documento inteiro
+		document.addEventListener("click", function (event) {
+			// Verifica se o clique ocorreu fora do menu
+			if (
+				!menu.contains(event.target) &&
+				!menuToggle.contains(event.target)
+			) {
+				// Fecha o menu
+				menu.classList.remove("active");
+			}
+		});
 
-</body>   
-<script>
+		const perguntasBallet = [
+			{
+				pergunta: "Quem é considerado o 'pai do ballet moderno'?",
+				opcoes: [
+					"Marius Petipa",
+					"Vaslav Nijinsky",
+					"Auguste Vestris",
+					"George Balanchine",
+				],
+				resposta: "Vaslav Nijinsky",
+			},
+			{
+				pergunta: "Qual é a principal técnica de ballet clássico?",
+				opcoes: ["Vaganova", "Cecchetti", "RAD", "ABT"],
+				resposta: "Vaganova",
+			},
+			{
+				pergunta:
+					"Qual é o nome do movimento em que a bailarina pula no ar e bate as pernas?",
+				opcoes: ["Adagio", "Jeté", "Pirouette", "Fouetté"],
+				resposta: "Jeté",
+			},
+			{
+				pergunta:
+					"Qual é o nome do calçado usado por bailarinas de ballet?",
+				opcoes: [
+					"Sapatilha de ponta",
+					"Sapatilha de jazz",
+					"Sapatilha de sapateado",
+					"Sapatilha de ballet",
+				],
+				resposta: "Sapatilha de ponta",
+			},
+			{
+				pergunta: "O que é um 'pas de deux'?",
+				opcoes: [
+					"Uma dança solo",
+					"Um duo de bailarinas",
+					"Um duo de bailarinos",
+					"Um dueto entre bailarino e bailarina",
+				],
+				resposta: "Um dueto entre bailarino e bailarina",
+			},
+			{
+				pergunta:
+					"Qual é o nome da bailarina russa famosa por seu papel em 'O Lago dos Cisnes'?",
+				opcoes: [
+					"Misty Copeland",
+					"Anna Pavlova",
+					"Maya Plisetskaya",
+					"Galina Ulanova",
+				],
+				resposta: "Galina Ulanova",
+			},
+			{
+				pergunta: "Quem coreografou 'O Lago dos Cisnes'?",
+				opcoes: [
+					"George Balanchine",
+					"Marius Petipa",
+					"August Bournonville",
+					"Lev Ivanov",
+				],
+				resposta: "Lev Ivanov",
+			},
+			{
+				pergunta:
+					"Qual é a companhia de ballet mais antiga do mundo, fundada em 1669?",
+				opcoes: [
+					"Paris Opera Ballet",
+					"Bolshoi Ballet",
+					"Royal Ballet",
+					"Mariinsky Ballet",
+				],
+				resposta: "Paris Opera Ballet",
+			},
+			{
+				pergunta:
+					"Qual é o nome do movimento em que a bailarina gira em uma perna só?",
+				opcoes: ["Jeté", "Pirouette", "Fouetté", "Grand jeté"],
+				resposta: "Pirouette",
+			},
+			{
+				pergunta:
+					"Qual é o nome da técnica de ballet criada por Enrico Cecchetti?",
+				opcoes: ["Vaganova", "Cecchetti", "RAD", "ABT"],
+				resposta: "Cecchetti",
+			},
+		];
 
-// Seleciona o botão do menu
-          const menuToggle = document.querySelector('.menu-1');
-  // Seleciona o menu de navegação
-    const menu = document.querySelector('.menu');
+		let perguntaAtual = 0;
+		let pontuacao = 0;
 
-  // Adiciona um evento de clique ao botão do menu
-  menuToggle.addEventListener('click', function () {
-    // Alterna a classe 'active' no menu de navegação
-    menu.classList.toggle('active');
-  });
+		const elementoPergunta = document.getElementById("pergunta");
+		const elementoOpcoes = document.getElementById("opcoes");
+		const elementoResultado = document.getElementById("resultado");
+		const botaoIniciar = document.getElementById("iniciar");
+		const botaoEnviar = document.getElementById("enviar");
 
-  // Adiciona um evento de clique ao documento inteiro
-  document.addEventListener('click', function (event) {
-    // Verifica se o clique ocorreu fora do menu
-    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-      // Fecha o menu
-      menu.classList.remove('active');
-    }
-  })
+		botaoIniciar.addEventListener("click", () => iniciarQuiz());
 
+		function iniciarQuiz() {
+			perguntaAtual = 0;
+			pontuacao = 0;
+			exibirPergunta();
+			botaoIniciar.style.display = "none";
+			elementoPergunta.style.display = "block";
+			elementoOpcoes.style.display = "block";
+			botaoEnviar.style.display = "none";
+		}
 
+		function exibirPergunta() {
+			elementoPergunta.textContent =
+				perguntasBallet[perguntaAtual].pergunta;
+			elementoOpcoes.innerHTML = "";
+			for (
+				let i = 0;
+				i < perguntasBallet[perguntaAtual].opcoes.length;
+				i++
+			) {
+				const botao = document.createElement("button");
+				botao.textContent = perguntasBallet[perguntaAtual].opcoes[i];
+				botao.classList.add("botao-opcao"); // Adiciona a classe botao-opcao
+				botao.addEventListener("click", (event) =>
+					verificarResposta(event.target.textContent)
+				); // Passa o texto do botão clicado
+				elementoOpcoes.appendChild(botao);
+			}
+		}
 
+		function verificarResposta(opcao) {
+			if (opcao === perguntasBallet[perguntaAtual].resposta) {
+				pontuacao++;
+			}
+			perguntaAtual++;
+			if (perguntaAtual < perguntasBallet.length) {
+				exibirPergunta();
+			} else {
+				mostrarResultado();
+			}
+		}
 
-  const perguntasBallet = [
-    {
-        pergunta: "Quem é considerado o 'pai do ballet moderno'?",
-        opcoes: ["Marius Petipa", "Vaslav Nijinsky", "Auguste Vestris", "George Balanchine"],
-        resposta: "Vaslav Nijinsky"
-    },
-    {
-        pergunta: "Qual é a principal técnica de ballet clássico?",
-        opcoes: ["Vaganova", "Cecchetti", "RAD", "ABT"],
-        resposta: "Vaganova"
-    },
-    {
-        pergunta: "Qual é o nome do movimento em que a bailarina pula no ar e bate as pernas?",
-        opcoes: ["Adagio", "Jeté", "Pirouette", "Fouetté"],
-        resposta: "Jeté"
-    },
-    {
-        pergunta: "Qual é o nome do calçado usado por bailarinas de ballet?",
-        opcoes: ["Sapatilha de ponta", "Sapatilha de jazz", "Sapatilha de sapateado", "Sapatilha de ballet"],
-        resposta: "Sapatilha de ponta"
-    },
-    {
-        pergunta: "O que é um 'pas de deux'?",
-        opcoes: ["Uma dança solo", "Um duo de bailarinas", "Um duo de bailarinos", "Um dueto entre bailarino e bailarina"],
-        resposta: "Um dueto entre bailarino e bailarina"
-    },
-    {
-        pergunta: "Qual é o nome da bailarina russa famosa por seu papel em 'O Lago dos Cisnes'?",
-        opcoes: ["Misty Copeland", "Anna Pavlova", "Maya Plisetskaya", "Galina Ulanova"],
-        resposta: "Galina Ulanova"
-    },
-    {
-        pergunta: "Quem coreografou 'O Lago dos Cisnes'?",
-        opcoes: ["George Balanchine", "Marius Petipa", "August Bournonville", "Lev Ivanov"],
-        resposta: "Lev Ivanov"
-    },
-    {
-        pergunta: "Qual é a companhia de ballet mais antiga do mundo, fundada em 1669?",
-        opcoes: ["Paris Opera Ballet", "Bolshoi Ballet", "Royal Ballet", "Mariinsky Ballet"],
-        resposta: "Paris Opera Ballet"
-    },
-    {
-        pergunta: "Qual é o nome do movimento em que a bailarina gira em uma perna só?",
-        opcoes: ["Jeté", "Pirouette", "Fouetté", "Grand jeté"],
-        resposta: "Pirouette"
-    },
-    {
-        pergunta: "Qual é o nome da técnica de ballet criada por Enrico Cecchetti?",
-        opcoes: ["Vaganova", "Cecchetti", "RAD", "ABT"],
-        resposta: "Cecchetti"
-    }
-];
+		function mostrarResultado() {
+			elementoPergunta.style.display = "none";
+			elementoOpcoes.style.display = "none";
+			botaoEnviar.style.display = "none";
+			elementoResultado.textContent = `Você acertou ${pontuacao} de ${perguntasBallet.length} questões.`;
+			elementoResultado.style.display = "block";
+			enviarPontuacao(pontuacao);
+		}
 
+		function enviarPontuacao(pontuacao) {
+			const userId = sessionStorage.ID_USUARIO;
+			const url = "/usuarios/armazenarPontuacao";
+			const dados = {
+				userId: userId,
+				pontuacao: pontuacao,
+			};
 
-
-let perguntaAtual = 0;
-let pontuacao = 0;
-
-  const elementoPergunta = document.getElementById('pergunta');
-  const elementoOpcoes = document.getElementById('opcoes');
-  const elementoResultado = document.getElementById('resultado');
-  const botaoIniciar = document.getElementById('iniciar');
-  const botaoEnviar = document.getElementById('enviar');
-
-        botaoIniciar.addEventListener('click', () => iniciarQuiz());
-
-        function iniciarQuiz() {
-            perguntaAtual = 0;
-            pontuacao = 0;
-            exibirPergunta();
-            botaoIniciar.style.display = 'none';
-            elementoPergunta.style.display = 'block';
-            elementoOpcoes.style.display = 'block';
-            botaoEnviar.style.display = 'none'; 
-        }
-
-        function exibirPergunta() {
-      elementoPergunta.textContent = perguntasBallet[perguntaAtual].pergunta;
-      elementoOpcoes.innerHTML = '';
-      for (let i = 0; i < perguntasBallet[perguntaAtual].opcoes.length; i++) {
-        const botao = document.createElement('button');
-        botao.textContent = perguntasBallet[perguntaAtual].opcoes[i];
-        botao.classList.add('botao-opcao'); // Adiciona a classe botao-opcao
-        botao.addEventListener('click', (event) => verificarResposta(event.target.textContent)); // Passa o texto do botão clicado
-        elementoOpcoes.appendChild(botao);
-    }
-}
-
-        function verificarResposta(opcao) {
-            if (opcao === perguntasBallet[perguntaAtual].resposta) {
-                pontuacao++;
-            }
-            perguntaAtual++;
-            if (perguntaAtual < perguntasBallet.length) {
-                exibirPergunta();
-            } else {
-                mostrarResultado();
-            }
-        }
-
-        function mostrarResultado() {
-            elementoPergunta.style.display = 'none';
-            elementoOpcoes.style.display = 'none';
-            botaoEnviar.style.display = 'none';
-            elementoResultado.textContent = `Você acertou ${pontuacao} de ${perguntasBallet.length} questões.`;
-            elementoResultado.style.display = 'block';
-            enviarPontuacao(pontuacao);
-        }
-
-      // Função para enviar a pontuação para o servidor
-      function enviarPontuacao(pontuacao) {
-            // ID do usuário (você precisa definir isso)
-            const userId = ''; 
-            // URL para enviar a pontuação (substitua pela URL correta)
-            const url = '/usuarios/armazenarPontuacao'; 
-            // Dados a serem enviados para o servidor
-            const dados = {
-                userId: userId,
-                pontuacao: pontuacao
-            };
-
-            // Envia os dados para o servidor usando Fetch API
-            fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(dados)
-                })
-                .then(response => {
-                    if (response.ok) {
-                        console.log('Pontuação enviada com sucesso!');
-                    } else {
-                        console.error('Falha ao enviar pontuação.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Erro ao enviar pontuação:', error);
-                });
-        }
-
-    </script>
-
-
+			fetch(url, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(dados),
+			})
+				.then((response) => {
+					if (response.ok) {
+						console.log("Pontuação enviada com sucesso!");
+					} else {
+						console.error("Falha ao enviar pontuação.");
+					}
+				})
+				.catch((error) => {
+					console.error("Erro ao enviar pontuação:", error);
+				});
+		}
+	</script>
+</html>

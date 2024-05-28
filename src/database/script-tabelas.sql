@@ -18,6 +18,8 @@ CREATE TABLE usuario (
 	senha VARCHAR (45)
 );
 
+select * from usuario;
+
 CREATE TABLE Categoria (
 	idCategoria INT PRIMARY KEY AUTO_INCREMENT,
 	categoria VARCHAR (45),
@@ -37,8 +39,14 @@ CREATE TABLE Resposta (
     idResposta INT PRIMARY KEY AUTO_INCREMENT,
     respostaUsuario VARCHAR(45),
     pontuacao INT,
-	fkUsuario int,
-	FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
+    fkUsuario INT,
+    FOREIGN KEY (fkUsuario) REFERENCES usuario(id),
+    UNIQUE (fkUsuario)
 );
+
+select * from Resposta;
+
+
+
 
 

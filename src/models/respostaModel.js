@@ -8,7 +8,5 @@ function atualizarPontuacaoUsuario(idUsuario, pontuacao) {
 }
 
 module.exports = {
-    cadastrar,
-    autenticar,
     atualizarPontuacaoUsuario // Adicionado novo método
 };

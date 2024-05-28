@@ -1,43 +1,56 @@
-var database = require("../database/config")
+var database = require("../database/config");
 
-    function autenticar(email, senha) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
-    var instrucaoSql = `
+function autenticar(email, senha) {
+	console.log(
+		"ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ",
+		email,
+		senha
+	);
+	var instrucaoSql = `
         SELECT id, nome, cpf, email FROM usuario WHERE email = '${email}' AND senha = '${senha}';
     `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+	console.log("Executando a instrução SQL: \n" + instrucaoSql);
+	return database.executar(instrucaoSql);
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
-    function cadastrar(nome, cpf,  email, senha) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, cpf, email, senha);
-    
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
-    var instrucaoSql = `
+function cadastrar(nome, cpf, email, senha) {
+	console.log(
+		"ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():",
+		nome,
+		cpf,
+		email,
+		senha
+	);
+
+	// Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+	//  e na ordem de inserção dos dados.
+	var instrucaoSql = `
         INSERT INTO usuario (nome, cpf, email, senha) VALUES ('${nome}', '${cpf}', '${email}', '${senha}');
     `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+	console.log("Executando a instrução SQL: \n" + instrucaoSql);
+	return database.executar(instrucaoSql);
+}
+
+function verificarPontuacaoUsuario(idUsuario) {
+    var instrucaoSql = `SELECT * FROM Resposta WHERE fkUsuario = ${idUsuario};`;
+    return database.executar(instrucaoSql);
+}
+	
+function inserirPontuacaoUsuario(idUsuario, pontuacao) {
+    var instrucaoSql = `INSERT INTO Resposta (pontuacao, fkUsuario) VALUES (${pontuacao}, ${idUsuario});`;
     return database.executar(instrucaoSql);
 }
 
-    // Importe o arquivo de configuração do banco de dados
-    var database = require("../database/config");
-
-// Função para armazenar a pontuação do usuário no banco de dados
-    function armazenarPontuacaoUsuario(ido, pontuacao) {
-    var instrucaoSql = `
-        INSERT INTO Resposta (pontuacao, fkUsuario)
-        VALUES (${pontuacao}, ${id})
-        ON DUPLICATE KEY UPDATE pontuacao = ${pontuacao};
-    `;
+function atualizarPontuacaoUsuario(idUsuario, pontuacao) {
+    var instrucaoSql = `UPDATE Resposta SET pontuacao = ${pontuacao} WHERE fkUsuario = ${idUsuario};`;
     return database.executar(instrucaoSql);
 }
-
 
 module.exports = {
     autenticar,
     cadastrar,
-    armazenarPontuacaoUsuario
+    verificarPontuacaoUsuario,
+    inserirPontuacaoUsuario,
+    atualizarPontuacaoUsuario
 };
