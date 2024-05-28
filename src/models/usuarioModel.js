@@ -21,13 +21,23 @@ var database = require("../database/config")
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-    function atualizarPontuacaoUsuario(idUsuario, pontuacao) {
-    var instrucaoSql = `UPDATE usuario SET pontuacao = ${pontuacao} WHERE id = ${idUsuario}`;
+
+    // Importe o arquivo de configuração do banco de dados
+    var database = require("../database/config");
+
+// Função para armazenar a pontuação do usuário no banco de dados
+    function armazenarPontuacaoUsuario(ido, pontuacao) {
+    var instrucaoSql = `
+        INSERT INTO Resposta (pontuacao, fkUsuario)
+        VALUES (${pontuacao}, ${id})
+        ON DUPLICATE KEY UPDATE pontuacao = ${pontuacao};
+    `;
     return database.executar(instrucaoSql);
 }
+
 
 module.exports = {
     autenticar,
     cadastrar,
-    atualizarPontuacaoUsuario
+    armazenarPontuacaoUsuario
 };

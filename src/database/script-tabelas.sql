@@ -25,6 +25,13 @@ CREATE TABLE Categoria (
 );
 /* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
+CREATE TABLE Pergunta (
+idPergunta INT PRIMARY KEY AUTO_INCREMENT,
+perguntas VARCHAR (100),
+fkCategoria INT,
+FOREIGN KEY (fkCategoria) REFERENCES Categoria(idCategoria)
+);
+
 	/*Respostas do Usuario e Corretas*/
 CREATE TABLE Resposta (
     idResposta INT PRIMARY KEY AUTO_INCREMENT,

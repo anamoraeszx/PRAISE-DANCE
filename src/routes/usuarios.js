@@ -13,3 +13,9 @@ router.post("/autenticar", function (req, res) {
 });
 
 module.exports = router;
+
+// Importe o controlador
+var usuarioController = require("../controllers/usuarioController");
+
+// Rota para armazenar a pontuação do usuário
+router.post("/armazenarPontuacao", usuarioController.armazenarPontuacao);

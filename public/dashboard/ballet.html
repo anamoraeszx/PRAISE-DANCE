@@ -210,32 +210,38 @@ let pontuacao = 0;
             enviarPontuacao(pontuacao);
         }
 
-        function enviarPontuacao(pontuacao) {
-        const userId = ''; // ID do usuário
-        const url = '../'; // Rota para armazenar a pontuação (verifique se está correta)
-        const dados = {
-            userId: userId,
-            pontuacao: pontuacao
-        };
+      // Função para enviar a pontuação para o servidor
+      function enviarPontuacao(pontuacao) {
+            // ID do usuário (você precisa definir isso)
+            const userId = ''; 
+            // URL para enviar a pontuação (substitua pela URL correta)
+            const url = '/usuarios/armazenarPontuacao'; 
+            // Dados a serem enviados para o servidor
+            const dados = {
+                userId: userId,
+                pontuacao: pontuacao
+            };
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(dados)
-        })
-        .then(response => {
-            if (response.ok) {
-                console.log('Pontuação enviada com sucesso!');
-            } else {
-                console.error('Falha ao enviar pontuação.');
-            }
-        })
-        .catch(error => {
-            console.error('Erro ao enviar pontuação:', error);
-        });
-    }
+            // Envia os dados para o servidor usando Fetch API
+            fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dados)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Pontuação enviada com sucesso!');
+                    } else {
+                        console.error('Falha ao enviar pontuação.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar pontuação:', error);
+                });
+        }
+
     </script>
 
 
