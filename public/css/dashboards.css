@@ -3,11 +3,23 @@
 
 /* MAIN PAGE */
 
-body {
+* {
   margin: 0;
-  height: 0;
-  background-color: rgb(0, 0, 0);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../assets/img/dash.png);
   font-family: "Cinzel", serif;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background-image: url("../assets/img/dash.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #89023E;
 }
 
 header {
@@ -40,7 +52,7 @@ header {
   right: 0;
   width: 300px; /* Largura do menu */
   height: 100%; /* Altura igual à altura da tela */
-  background-color: #300619; /* Cor de fundo do menu */
+  background-color: #2421217c; /* Cor de fundo do menu */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
   border-radius: 2% ;
 }
@@ -137,3 +149,75 @@ height: 200px;
 margin-left: 0px;
 margin-top: 0;
 }
+
+/* QUIZ - opcoes */
+
+.container {
+  display: flex;
+  justify-content: center; /* Centraliza os elementos horizontalmente */
+  height: 100vh; /* Define a altura da tela como 100% da altura do viewport */
+}
+
+.card1 {
+  display: inline-block;
+  width: 400px;
+  height: 700px;
+  padding: 20px;
+  background-image: url(../assets/img/_209a8f26-979f-4dc8-a21a-8a7973634e76.jpeg);
+  background-size: cover; /* Certifique-se de que a imagem de fundo cubra todo o contêiner */
+  background-position: center; /* Centralize a imagem de fundo */
+  border-radius: 15px;
+  text-decoration: none;
+  color: #000000;
+  transition: transform 0.3s;
+  margin: 0 50px; /* Isso centraliza os elementos horizontalmente */
+  
+}
+
+.card1 h2,
+.card2 h2{
+  font-size: 40px;
+  text-align: center;
+}
+
+.card2 {
+  display: inline-block;
+  width: 400px;
+  height: 700px;
+  padding: 20px;
+  background-image: url(../assets/img/_be361f2a-ec5d-41d7-8f92-660e8488f495.jpeg);
+  background-size: cover; /* Certifique-se de que a imagem de fundo cubra todo o contêiner */
+  background-position: center; /* Centralize a imagem de fundo */
+  border-radius: 15px;
+  text-decoration: none;
+  color: #000000;
+  transition: transform 0.3s;
+  margin: 0 50px; /* Isso centraliza os elementos horizontalmente */
+}
+
+.card1:hover,
+.card2:hover {
+  transform: translateY(-5px);
+}
+
+ /* footer*/
+  
+ .footer {
+  height: 80px;
+  background-color: #89023e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .foo {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .foo p {
+  font-weight: bold;
+}
+

@@ -23,27 +23,15 @@ CREATE TABLE Categoria (
 	categoria VARCHAR (45),
 	CONSTRAINT chk_categoria CHECK (categoria IN ('ballet', 'Hip Hop'))
 );
-
-CREATE TABLE Pergunta (
-	/*Perguntas do QUIZ*/
-	idPergunta INT PRIMARY KEY AUTO_INCREMENT,
-	perguntas VARCHAR (100),
-	fkCategoria INT,
-FOREIGN KEY (fkCategoria) REFERENCES Categoria(idCategoria)
-);
-
 /* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
-CREATE TABLE Resposta(
 	/*Respostas do Usuario e Corretas*/
-	idResposta INT,
-	respostasUsuario VARCHAR (45),
-	respostaCorreta VARCHAR (45),
-	pontuação INT,
-	fkUsuario INT,
-	fkPergunta INT,
-	primary key (idResposta, fkUsuario, fkPergunta),
-	FOREIGN KEY (fkUsuario) REFERENCES usuario(id),
-	FOREIGN KEY (fkPergunta) REFERENCES Pergunta(idPergunta)
+CREATE TABLE Resposta (
+    idResposta INT PRIMARY KEY AUTO_INCREMENT,
+    respostaUsuario VARCHAR(45),
+    pontuacao INT,
+	fkUsuario int,
+	FOREIGN KEY (fkUsuario) REFERENCES usuario(id)
 );
+
 

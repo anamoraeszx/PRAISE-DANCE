@@ -76,7 +76,24 @@ function cadastrar(req, res) {
   }
 }
 
+  function armazenarPontuacao(req, res) {
+  var userId = req.body.userId; // ID do usuário
+  var pontuacao = req.body.pontuacao; // Pontuação do usuário
+
+  usuarioModel.atualizarPontuacaoUsuario(userId, pontuacao)
+    .then(function(resultado) {
+      console.log("Pontuação do usuário atualizada com sucesso!");
+      res.status(200).send("Pontuação do usuário atualizada com sucesso!");
+    })
+    .catch(function(erro) {
+      console.log("Erro ao atualizar pontuação do usuário:", erro);
+      res.status(500).send("Erro ao atualizar pontuação do usuário");
+    });
+}
+
+
 module.exports = {
   autenticar,
   cadastrar,
+  armazenarPontuacao
 };

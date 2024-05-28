@@ -30,16 +30,15 @@
     
     <div class="menu-1">
         <div> <img class="img" src="../assets/img/elemento.png" alt=""></div>
-      </div>
+    </div>
   
-      <nav class="menu">
+    <nav class="menu">
+    <img class="imgJanela" src="../assets/img/2.png" alt="">
 
-        <img class="imgJanela" src="../assets/img/2.png" alt="">
-
-        <ul> <br> <br> 
-          <div class="btn-nav-white">
-          <a href="cards.html"><h3> MAIN PAGE </h3>
-          </a></div>
+    <ul> <br><br> 
+      <div class="btn-nav-white">
+        <a href="cards.html"><h3> MAIN PAGE </h3></a>
+      </div>
 
           <div class="btn-nav">
           <a href="quiz.html"> <h3>QUIZ</h3>
@@ -53,13 +52,30 @@
           </div>
         </ul>
       </nav>
-    </header>
-    <body>
-        
-    </body>
+</header>
+
+<div class="container">
+  <a href="ballet.html" class="card1">
+    <h2>ballet</h2>
+    <p>Vamos ver o quanto você sabe sobre ballet &copy </p>
+
+  <a href="hiphop.html" class="card2">
+    <h2>hiphop</h2>
+    <p>Vamos ver o quanto você sabe sobre hiphop &copy </p></a>
+</div>
+    <footer>
+      <div class="footer">
+        <div class="foo">
+          <p>Oficial PRAISE DANCE - AnaMoraes &copy;</p>
+          <br>
+        </div>
+      </div>
+    </footer>
+
+</body>
 
   
-      <script>
+<script>
 
   
   // Seleciona o botão do menu
@@ -76,137 +92,10 @@
   // Adiciona um evento de clique ao documento inteiro
   document.addEventListener('click', function (event) {
     // Verifica se o clique ocorreu fora do menu
-    if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+  if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
       // Fecha o menu
-      menu.classList.remove('active');
+  menu.classList.remove('active');
     }
   })
-            b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-            let respostasCorretas = 0;
-            let respostasIncorretas = 0;
-
-            function iniciar() {
-                  document.getElementById('inicarQuiz').style.display = 'none';
-                  document.getElementById('quiz').style.display = 'block';
-            }
-
-            let perguntaAtual = 1;
-            let totalDePergutas = 10;
-
-            function responder(botao, respostaCorreta) {
-                  const respostaSelecionada = botao.textContent;
-                  if (respostaSelecionada === respostaCorreta) {
-                        respostasCorretas++;
-                  } else {
-                        respostasIncorretas++;
-                  }
-
-                  document.getElementById("pergunta" + perguntaAtual).style.display = "none";
-
-                  if (perguntaAtual < totalDePergutas) {
-                        perguntaAtual++;
-                        document.getElementById("pergunta" + perguntaAtual).style.display = "block";
-                  } else {
-                        exibirResultados();
-                  }
-            }
-
-            function obterIdUsuario() {
-                  return sessionStorage.ID_USUARIO;
-            }
-
-            function exibirResultados() {
-                  const fk_usuario = obterIdUsuario();
-
-                  document.getElementById("quiz").style.display = "none";
-                  document.getElementById("resultados").style.display = "block";
-
-                  const totalRespostas = respostasCorretas + respostasIncorretas;
-                  const media = (respostasCorretas / totalRespostas) * 100;
-                  document.getElementById("media").textContent = media.toFixed(2) + "%";
-
-                  const mediaGeral = 70;
-                  if (media >= mediaGeral) {
-                        document.getElementById("acimaOuAbaixo").textContent = "acima";
-                  } else {
-                        document.getElementById("acimaOuAbaixo").textContent = "abaixo";
-                  }
-
-                  let desempenho = '';
-                  if (media >= 80) {
-                        desempenho = 'Bom';
-                  } else if (media >= 50) {
-                        desempenho = 'Médio';
-                  } else {
-                        desempenho = 'Ruim';
-                  }
-                  document.getElementById("desempenho").textContent = desempenho;
-
-                  fetch('/medidas/salvar-resultados', {
-                        method: 'POST',
-                        headers: {
-                              'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                              acertos: respostasCorretas,
-                              erros: respostasIncorretas,
-                              fk_usuario: fk_usuario
-                        })
-                  })
-                        .then(response => {
-                              if (!response.ok) {
-                                    throw new Error('Erro ao salvar resultados');
-                              }
-                              return response.json();
-                        })
-                        .then(data => {
-                              console.log('Resultados salvos com sucesso:', data);
-                        })
-                        .catch(error => {
-                              console.error('Erro ao salvar resultados:', error);
-                        });
-
-                  const ctx = document.getElementById('graficoResultados').getContext('2d');
-                  const quizChart = new Chart(ctx, {
-                        type: 'pie',
-                        data: {
-                              labels: ['Respostas Corretas', 'Respostas Incorretas'],
-                              datasets: [{
-                                    label: 'Quantidade',
-                                    data: [respostasCorretas, respostasIncorretas],
-                                    backgroundColor: [
-                                          'rgba(75, 192, 192)',
-                                          'rgba(255, 99, 132)',
-                                    ],
-                                    borderColor: [
-                                          'rgba(75, 192, 192, 1)',
-                                          'rgba(255, 99, 132, 1)',
-                                    ],
-                                    borderWidth: 1
-                              }]
-                        },
-                        options: {
-                              scales: {
-                                    y: {
-                                          beginAtZero: true
-                                    }
-                              }
-                        }
-                  });
-            }
-
-            function voltar() {
-                  window.location.href = './mainPage.html';
-            }
-
-
+           
  </script>
-</body>
-
-</html>
-
-
-</body>
-
-</html>
