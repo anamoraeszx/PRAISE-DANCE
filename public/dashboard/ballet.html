@@ -98,6 +98,7 @@
 		</footer>
 	</body>
 	<script>
+
 		// Seleciona o botão do menu
 		const menuToggle = document.querySelector(".menu-1");
 		// Seleciona o menu de navegação
@@ -211,7 +212,8 @@
 		];
 
 		let perguntaAtual = 0;
-		let pontuacao = 0;
+		let acertos = 0;
+		let erros = 0;
 
 		const elementoPergunta = document.getElementById("pergunta");
 		const elementoOpcoes = document.getElementById("opcoes");
@@ -223,7 +225,6 @@
 
 		function iniciarQuiz() {
 			perguntaAtual = 0;
-			pontuacao = 0;
 			exibirPergunta();
 			botaoIniciar.style.display = "none";
 			elementoPergunta.style.display = "block";
@@ -238,8 +239,8 @@
 			for (
 				let i = 0;
 				i < perguntasBallet[perguntaAtual].opcoes.length;
-				i++
-			) {
+				i++ 
+			) {	
 				const botao = document.createElement("button");
 				botao.textContent = perguntasBallet[perguntaAtual].opcoes[i];
 				botao.classList.add("botao-opcao"); // Adiciona a classe botao-opcao
@@ -252,7 +253,9 @@
 
 		function verificarResposta(opcao) {
 			if (opcao === perguntasBallet[perguntaAtual].resposta) {
-				pontuacao++;
+				acertos++;
+			} else {
+				erros++
 			}
 			perguntaAtual++;
 			if (perguntaAtual < perguntasBallet.length) {
@@ -266,17 +269,19 @@
 			elementoPergunta.style.display = "none";
 			elementoOpcoes.style.display = "none";
 			botaoEnviar.style.display = "none";
-			elementoResultado.textContent = `Você acertou ${pontuacao} de ${perguntasBallet.length} questões.`;
+			elementoResultado.textContent = `Você acertou ${acertos} de ${perguntasBallet.length} questões.`;
 			elementoResultado.style.display = "block";
-			enviarPontuacao(pontuacao);
+			enviarPontuacao(acertos, erros);
 		}
 
-		function enviarPontuacao(pontuacao) {
+		function enviarPontuacao(acertos,erros) {
 			const userId = sessionStorage.ID_USUARIO;
 			const url = "/usuarios/armazenarPontuacao";
 			const dados = {
 				userId: userId,
-				pontuacao: pontuacao,
+				acertos: acertos,
+				erros: erros,
+				quiz: parametro
 			};
 
 			fetch(url, {

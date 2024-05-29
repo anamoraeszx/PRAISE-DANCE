@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url(../assets/img/dash.png);
+
   font-family: "Cinzel", serif;
   height: 100vh;
   width: 100%;
@@ -161,7 +161,7 @@ margin-top: 0;
 .card1 {
   display: inline-block;
   width: 400px;
-  height: 700px;
+  height: 550px;
   padding: 20px;
   background-image: url(../assets/img/_209a8f26-979f-4dc8-a21a-8a7973634e76.jpeg);
   background-size: cover; /* Certifique-se de que a imagem de fundo cubra todo o contêiner */
@@ -183,7 +183,7 @@ margin-top: 0;
 .card2 {
   display: inline-block;
   width: 400px;
-  height: 700px;
+  height: 550px;
   padding: 20px;
   background-image: url(../assets/img/_be361f2a-ec5d-41d7-8f92-660e8488f495.jpeg);
   background-size: cover; /* Certifique-se de que a imagem de fundo cubra todo o contêiner */

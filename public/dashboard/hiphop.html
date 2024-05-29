@@ -203,7 +203,8 @@
 		];
 
 		let perguntaAtual = 0;
-		let pontuacao = 0;
+		let acertos = 0;
+		let erros = 0;
 
 		const elementoPergunta = document.getElementById("pergunta");
 		const elementoOpcoes = document.getElementById("opcoes");
@@ -215,7 +216,6 @@
 
 		function iniciarQuiz() {
 			perguntaAtual = 0;
-			pontuacao = 0;
 			exibirPergunta();
 			botaoIniciar.style.display = "none";
 			elementoPergunta.style.display = "block";
@@ -244,8 +244,10 @@
 
 		function verificarResposta(opcao) {
 			if (opcao === perguntasHipHop[perguntaAtual].resposta) {
-				pontuacao++;
-			}
+				acertos++;
+			} else[
+				erros++
+			]
 			perguntaAtual++;
 			if (perguntaAtual < perguntasHipHop.length) {
 				exibirPergunta();
@@ -258,16 +260,18 @@
 			elementoPergunta.style.display = "none";
 			elementoOpcoes.style.display = "none";
 			botaoEnviar.style.display = "none";
-			elementoResultado.textContent = `Você acertou ${pontuacao} de ${perguntasHipHop.length} perguntas.`;
+			elementoResultado.textContent = `Você acertou ${acertos} de ${perguntasHipHop.length} perguntas.`;
 			elementoResultado.style.display = "block";
+			enviarPontuacao(acertos, erros);
 		}
 
-		function enviarPontuacao(pontuacao) {
+		function enviarPontuacao(acertos, erros) {
 			const userId = sessionStorage.ID_USUARIO;
 			const url = "/usuarios/armazenarPontuacao";
 			const dados = {
 				userId: userId,
-				pontuacao: pontuacao,
+				acertos: acertos,
+				erros: erros
 			};
 
 			fetch(url, {

@@ -84,16 +84,17 @@ function cadastrar(req, res) {
 
 function armazenarPontuacao(req, res) {
     var userId = req.body.userId;
-    var pontuacao = req.body.pontuacao;
+    var acertos = req.body.acertos;
+    var erros = req.body.erros;
 
     usuarioModel.verificarPontuacaoUsuario(userId)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 // Usuário já tem uma pontuação, então atualize
-                return usuarioModel.atualizarPontuacaoUsuario(userId, pontuacao);
+                return usuarioModel.atualizarPontuacaoUsuario(userId, acertos, erros);
             } else {
                 // Usuário não tem pontuação, então insira
-                return usuarioModel.inserirPontuacaoUsuario(userId, pontuacao);
+                return usuarioModel.inserirPontuacaoUsuario(userId, acertos, erros);
             }
         })
         .then(function () {

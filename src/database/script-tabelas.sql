@@ -21,27 +21,26 @@ CREATE TABLE usuario (
 select * from usuario;
 
 CREATE TABLE Categoria (
-	idCategoria INT PRIMARY KEY AUTO_INCREMENT,
-	categoria VARCHAR (45),
-	CONSTRAINT chk_categoria CHECK (categoria IN ('ballet', 'Hip Hop'))
+	idCategoria INT PRIMARY KEY,
+	categoria VARCHAR (45)
 );
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
-CREATE TABLE Pergunta (
-idPergunta INT PRIMARY KEY AUTO_INCREMENT,
-perguntas VARCHAR (100),
-fkCategoria INT,
-FOREIGN KEY (fkCategoria) REFERENCES Categoria(idCategoria)
-);
+INSERT INTO Categoria VALUE 
+(1, 'ballet'),
+(2, 'Hip Hop'):
+
+/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
 	/*Respostas do Usuario e Corretas*/
 CREATE TABLE Resposta (
     idResposta INT PRIMARY KEY AUTO_INCREMENT,
-    respostaUsuario VARCHAR(45),
-    pontuacao INT,
+    acertos INT,
+    erros INT,
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(id),
-    UNIQUE (fkUsuario)
+    UNIQUE (fkUsuario),
+    fkCategoria INT,
+    FOREIGN KEY (fkCategoria) REFERENCES Categoria(idCategoria)
 );
 
 select * from Resposta;

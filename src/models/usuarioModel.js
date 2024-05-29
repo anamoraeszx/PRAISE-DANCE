@@ -37,13 +37,13 @@ function verificarPontuacaoUsuario(idUsuario) {
     return database.executar(instrucaoSql);
 }
 	
-function inserirPontuacaoUsuario(idUsuario, pontuacao) {
-    var instrucaoSql = `INSERT INTO Resposta (pontuacao, fkUsuario) VALUES (${pontuacao}, ${idUsuario});`;
+function inserirPontuacaoUsuario(idUsuario, acertos, erros, fkCategoria) {
+    var instrucaoSql = `INSERT INTO Resposta (acertos, erros, fkUsuario, fkCategoria) VALUES (${acertos}, ${erros} ,${idUsuario}, ${fkCategoria}  );`;
     return database.executar(instrucaoSql);
 }
 
-function atualizarPontuacaoUsuario(idUsuario, pontuacao) {
-    var instrucaoSql = `UPDATE Resposta SET pontuacao = ${pontuacao} WHERE fkUsuario = ${idUsuario};`;
+function atualizarPontuacaoUsuario(idUsuario, acertos, erros, fkCategoria) {
+    var instrucaoSql = `UPDATE Resposta SET acertos = ${acertos}, erros = ${erros} WHERE fkUsuario = ${idUsuario} AND fkCategoria = ${fkCategoria};`;
     return database.executar(instrucaoSql);
 }
 
