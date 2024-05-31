@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAISE-DANCE || Anna Pavlova</title>
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/info.css">
+    
+</head>
+<body>
+    <header>
+        <div class="menu-1">
+            <div>
+                <img class="img" src="../assets/img/elemento.png" alt="" />
+            </div>
+        </div>
+
+        <nav class="menu">
+            <img class="imgJanela" src="../assets/img/2.png" alt="" />
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <ul>
+                <br />
+                <br />
+                <div class="btn-nav">
+                    <a href="cards.html"><h3>MAIN PAGE</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="quiz.html"> <h3>QUIZ</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="dashboard.html"> <h3>grafico</h3> </a>
+                </div>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <center><h2>Anna Pavlova</h2></center> <br> <br>
+    
+    <p>
+        Anna Pavlova, nascida Anna Matveyevna Pavlovna Pavlova em 12 de fevereiro de 1881, <br>
+        em São Petersburgo, Rússia, é uma das mais famosas bailarinas clássicas da história. Ela foi uma <br> 
+        das primeiras bailarinas a alcançar fama internacional e é amplamente considerada uma das maiores <br>
+        intérpretes do balé romântico. <br> <br>
+
+        Pavlova começou sua formação em ballet aos oito anos de idade na Escola Imperial de Ballet <br>
+        em São Petersburgo. Ela estudou com os melhores professores e rapidamente se destacou como <br>
+        uma aluna excepcional. Em 1899, ela se formou na escola e foi aceita no Ballet Mariinsky <br>
+        (anteriormente conhecido como Ballet Imperial), onde começou sua carreira profissional. <br> <br>
+
+        Durante sua carreira, Pavlova se tornou famosa por seus papéis em obras como "O Lago dos Cisnes", <br>
+        "Giselle" e "A Bela Adormecida". Ela também foi conhecida por suas apresentações de solos, incluindo a "Morte do Cisne", <br>
+        uma peça coreografada especialmente para ela por Michel Fokine. Sua técnica graciosa, expressividade emocional e presença no <br>
+        palco cativaram audiências em todo o mundo. <br><br>
+
+        Anna Pavlova foi introduzida ao mundo do ballet quando era muito jovem. <br>
+        Sua mãe, Lyubov Feodorovna Pavlova, era uma lavadeira que trabalhava para uma família nobre <br>
+        russa que tinha uma filha que frequentava a Escola Imperial de Ballet. A menina frequentemente <br>
+        trazia seus livros de balé para casa e ensinava os passos a Anna, que mostrou talento natural desde cedo. <br> <br>
+
+        Aos oito anos de idade, Pavlova começou a treinar na Escola Imperial de Ballet em São Petersburgo, <br>
+        onde recebeu instrução formal em técnica clássica e repertório de ballet. Seu talento excepcional logo chamou <br>
+        a atenção dos professores e ela rapidamente progrediu através dos níveis de treinamento. <br>
+
+        Sua dedicação e paixão pela dança a levaram a se tornar uma das mais celebradas bailarinas de sua geração <br>
+        e uma figura seminal na história do ballet clássico. <br>
+    </p>
+    
+        <div class="card08_1"></div>
+        
+</body>
+</html>
+<script>
+    // Seleciona o botão do menu
+		const menuToggle = document.querySelector(".menu-1");
+		// Seleciona o menu de navegação
+		const menu = document.querySelector(".menu");
+
+		// Adiciona um evento de clique ao botão do menu
+		menuToggle.addEventListener("click", function () {
+			// Alterna a classe 'active' no menu de navegação
+			menu.classList.toggle("active");
+		});
+
+		// Adiciona um evento de clique ao documento inteiro
+		document.addEventListener("click", function (event) {
+			// Verifica se o clique ocorreu fora do menu
+			if (
+				!menu.contains(event.target) &&
+				!menuToggle.contains(event.target)
+			) {
+				// Fecha o menu
+				menu.classList.remove("active");
+			}
+		});
+</script>

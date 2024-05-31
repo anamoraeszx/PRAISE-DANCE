@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAISE-DANCE || Jay-Z</title>
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/info.css">
+    
+</head>
+<body>
+    <header>
+        <div class="menu-1">
+            <div>
+                <img class="img" src="../assets/img/elemento.png" alt="" />
+            </div>
+        </div>
+
+        <nav class="menu">
+            <img class="imgJanela" src="../assets/img/2.png" alt="" />
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <ul>
+                <br />
+                <br />
+                <div class="btn-nav">
+                    <a href="cards.html"><h3>MAIN PAGE</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="quiz.html"> <h3>QUIZ</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="dashboard.html"> <h3>grafico</h3> </a>
+                </div>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <center><h2>Jay-Z</h2></center> <br>
+    
+    <p>
+Jay-Z, nascido Shawn Corey Carter em 4 de dezembro de 1969 no Brooklyn, Nova York, é um dos artistas mais influentes e bem-sucedidos <br>
+do hip hop. Ele cresceu em Marcy Houses, um projeto habitacional em Bedford-Stuyvesant, Brooklyn. Sua infância <br>
+foi marcada pela pobreza e pela exposição à violência das ruas. <br>
+No entanto, ele encontrou refúgio na música e na arte. <br> <br>
+Jay-Z não apenas moldou a paisagem do hip hop como um dos artistas mais prolíficos e talentosos do gênero, mas também desempenhou um papel <br>
+crucial em sua evolução como empresário e magnata da indústria musical. Ele fundou a gravadora Roc-A-Fella Records em 1995, que se tornou uma das mais influentes do hip hop, <br>
+lançando álbuns de artistas como Kanye West, Cam'ron e Beanie Sigel. <br></p>
+    
+        <div class="card05_1"></div>
+        
+</body>
+</html>
+<script>
+    // Seleciona o botão do menu
+		const menuToggle = document.querySelector(".menu-1");
+		// Seleciona o menu de navegação
+		const menu = document.querySelector(".menu");
+
+		// Adiciona um evento de clique ao botão do menu
+		menuToggle.addEventListener("click", function () {
+			// Alterna a classe 'active' no menu de navegação
+			menu.classList.toggle("active");
+		});
+
+		// Adiciona um evento de clique ao documento inteiro
+		document.addEventListener("click", function (event) {
+			// Verifica se o clique ocorreu fora do menu
+			if (
+				!menu.contains(event.target) &&
+				!menuToggle.contains(event.target)
+			) {
+				// Fecha o menu
+				menu.classList.remove("active");
+			}
+		});
+</script>

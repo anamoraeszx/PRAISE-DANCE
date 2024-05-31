@@ -10,6 +10,7 @@
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/info.css">
    
 
     <script src="../js/sessao.js"></script>
@@ -50,40 +51,63 @@
         </ul>
       </nav>
     </header>
-           
+</div>
 
-            
+<center>
+  <h2>O que você precisa saber sobre alguns passos de dança</h2>
+</center>
+<div class="container">
+  <div class="cards-container">
+          <a href="1.html" class="card01">
+          <h4>Pas de Bourrée</h4></a>
+      
+          <a href="2.html" class="card02">
+          <h4>Plié</h4></a>
 
-        </div>
+          <a href="3.html" class="card03">
+          <h4>Top Rock</h4></a>
 
+          <a href="4.html" class="card04">
+          <h4>Locking</h4></a>
+      </div>
+  </div>
 
+  <center>
+    <h2>Você ja conheceu os principais astros do hip-hop?</h2>
+  </center>
+
+  <div class="container">
+    <div class="cards-container">
+            <a href="jaz.html" class="card05">
+            <h4>Jay-Z</h4></a>
+        
+            <a href="tupac.html" class="card06">
+            <h4>Tupac Shakur (2Pac)</h4></a>
+    </div>
+  </div>
+
+  <center>
+    <h2>Você ja conheceu os principais astros do ballet?</h2>
+  </center>
+  <div class="container">
+    <div class="cards-container">
+            <a href="Mikhail.html" class="card07">
+            <h4>Mikhail Baryshnikov</h4></a>
+  
+            <a href="Anna.html" class="card08">
+            <h4>Anna Pavlova</h4></a>
+    </div>
+  </div>
    
-    
-
-
-    
+<center>
+<h2>Vamos testar o que aprendemos?</h2> <br>
+  <a href="quiz.html" class="legend"> Clique Aqui</a></center>
+  <br>
 
 </body>
 
-<script>
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
+<script>
 
  // Seleciona o botão do menu
  const menuToggle = document.querySelector('.menu-1');

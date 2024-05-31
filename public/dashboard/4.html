@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/info.css">
+</head>
+<body>
+    <header>
+        <div class="menu-1">
+            <div>
+                <img class="img" src="../assets/img/elemento.png" alt="" />
+            </div>
+        </div>
+
+        <nav class="menu">
+            <img class="imgJanela" src="../assets/img/2.png" alt="" />
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <ul>
+                <br />
+                <br />
+                <div class="btn-nav">
+                    <a href="cards.html"><h3>MAIN PAGE</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="quiz.html"> <h3>QUIZ</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="dashboard.html"> <h3>grafico</h3> </a>
+                </div>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <center><h2>Locking</h2></center> <br>
+    <h6>
+        O Locking é um estilo de dança hip hop caracterizado por movimentos rígidos e paradas <br>
+        abruptas, muitas vezes combinados com expressões faciais exageradas. Foi desenvolvido na Califórnia na década <br>
+        de 1960 por Don Campbell e seu grupo, The Lockers. Eles combinaram movimentos de dança funk com teatro e comédia,<br>
+        criando um estilo único que se tornou popular na cena hip hop. 
+    </h6>
+    <div class="card04_1"></div>
+</body>
+</html>
+<script>
+    // Seleciona o botão do menu
+		const menuToggle = document.querySelector(".menu-1");
+		// Seleciona o menu de navegação
+		const menu = document.querySelector(".menu");
+
+		// Adiciona um evento de clique ao botão do menu
+		menuToggle.addEventListener("click", function () {
+			// Alterna a classe 'active' no menu de navegação
+			menu.classList.toggle("active");
+		});
+
+		// Adiciona um evento de clique ao documento inteiro
+		document.addEventListener("click", function (event) {
+			// Verifica se o clique ocorreu fora do menu
+			if (
+				!menu.contains(event.target) &&
+				!menuToggle.contains(event.target)
+			) {
+				// Fecha o menu
+				menu.classList.remove("active");
+			}
+		});
+</script>
