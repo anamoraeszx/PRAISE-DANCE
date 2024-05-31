@@ -107,46 +107,35 @@ function armazenarPontuacao(req, res) {
 		});
 }
 
-function obterPontuacaoUsuario(req, res) {
-    const idUsuario = req.params.idUsuario;
+function obterPontuacoes(req, res) {
+    const userId = req.params.userId;
+    const quizType = req.params.quizType;
 
-    usuarioModel.verificarPontuacaoUsuario(idUsuario)
-        .then(function (resultado) {
-            res.json(resultado); // Envie os dados de pontuação do usuário como resposta
-        })
-        .catch(function (erro) {
-            console.error("Erro ao obter pontuação do usuário:", erro);
-            res.status(500).send("Erro ao obter pontuação do usuário");
-        });
-}
-
-function gerarGraficoPontuacao(req, res) {
-    try {
-        // Recupera os dados de pontuação dos usuários do banco de dados
-        const pontuacoes = usuarioModel.obterPontuacoes();
-
-        // Processa os dados para o formato esperado pelo Chart.js
-        const labels = pontuacoes.map(pontuacao => pontuacao.nome); // Nomes dos usuários
-        const acertos = pontuacoes.map(pontuacao => pontuacao.acertos); // Quantidade de acertos
-        const erros = pontuacoes.map(pontuacao => pontuacao.erros); // Quantidade de erros
-
-        // Renderiza o gráfico
-        res.render('grafico', {
-            labels: JSON.stringify(labels),
-            acertos: JSON.stringify(acertos),
-            erros: JSON.stringify(erros)
-        });
-    } catch (error) {
-        console.error("Erro ao gerar gráfico de pontuação:", error);
-        res.status(500).send("Erro ao gerar gráfico de pontuação");
+    if (!userId) {
+        return res.status(400).send("O ID do usuário está indefinido!");
     }
-}
+    if (!quizType) {
+        return res.status(400).send("O tipo de quiz está indefinido!");
+    }
 
+    usuarioModel.obterPontuacoes(userId, quizType)
+        .then(resultado => {
+            console.log("Resultado da consulta:", resultado); // Log para depuração
+            if (resultado.length > 0) {
+                res.json(resultado);
+            } else {
+                res.status(404).send("Nenhum dado encontrado para o usuário e quiz especificados.");
+            }
+        })
+        .catch(erro => {
+            console.error("Erro ao obter pontuações:", erro);
+            res.status(500).send("Erro ao obter pontuações");
+        });
+}
 
 module.exports = {
 	autenticar,
 	cadastrar,
 	armazenarPontuacao,
-	obterPontuacaoUsuario,
-	gerarGraficoPontuacao
+	obterPontuacoes
 };

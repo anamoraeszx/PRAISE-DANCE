@@ -47,15 +47,14 @@ function atualizarPontuacaoUsuario(idUsuario, acertos, erros, fkCategoria) {
     return database.executar(instrucaoSql);
 }
 
-function obterPontuacoes() {
-    var instrucaoSql = `
-        SELECT nome, acertos, erros FROM usuario
-        INNER JOIN Resposta ON usuario.id = Resposta.fkUsuario;
+function obterPontuacoes(userId, quizType) {
+	const query = `
+        SELECT acertos, erros
+        FROM Resposta
+        WHERE fkUsuario = ${userId} AND fkCategoria = ${quizType}
     `;
-    return database.executar(instrucaoSql);
+	return database.executar(query);
 }
-
-
 module.exports = {
     autenticar,
     cadastrar,
