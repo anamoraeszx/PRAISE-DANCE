@@ -262,16 +262,17 @@
 			botaoEnviar.style.display = "none";
 			elementoResultado.textContent = `Você acertou ${acertos} de ${perguntasHipHop.length} perguntas.`;
 			elementoResultado.style.display = "block";
-			enviarPontuacao(acertos, erros);
+			enviarPontuacao(acertos, erros, 2);
 		}
 
-		function enviarPontuacao(acertos, erros) {
+		function enviarPontuacao(acertos, erros, categoriaId) {
 			const userId = sessionStorage.ID_USUARIO;
 			const url = "/usuarios/armazenarPontuacao";
 			const dados = {
 				userId: userId,
 				acertos: acertos,
-				erros: erros
+				erros: erros,
+				categoriaId: categoriaId
 			};
 
 			fetch(url, {

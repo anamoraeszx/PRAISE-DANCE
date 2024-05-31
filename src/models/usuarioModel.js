@@ -34,7 +34,7 @@ function cadastrar(nome, cpf, email, senha) {
 
 function verificarPontuacaoUsuario(idUsuario) {
     var instrucaoSql = `SELECT * FROM Resposta WHERE fkUsuario = ${idUsuario};`;
-    return database.executar(instrucaoSql);
+    return database.executar(instrucaoSql)
 }
 	
 function inserirPontuacaoUsuario(idUsuario, acertos, erros, fkCategoria) {
@@ -47,10 +47,20 @@ function atualizarPontuacaoUsuario(idUsuario, acertos, erros, fkCategoria) {
     return database.executar(instrucaoSql);
 }
 
+function obterPontuacoes() {
+    var instrucaoSql = `
+        SELECT nome, acertos, erros FROM usuario
+        INNER JOIN Resposta ON usuario.id = Resposta.fkUsuario;
+    `;
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     autenticar,
     cadastrar,
     verificarPontuacaoUsuario,
     inserirPontuacaoUsuario,
-    atualizarPontuacaoUsuario
+    atualizarPontuacaoUsuario,
+	obterPontuacoes
 };

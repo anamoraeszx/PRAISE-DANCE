@@ -9,7 +9,7 @@
 	<title>AquaTech | Dashboards</title>
 
 
-	<link rel="stylesheet" href="../css/dashboards.css">
+	<link rel="stylesheet" href="../css/graficos.css">
 	<script src="../js/sessao.js"></script>
 	<script src="./../js/alerta.js"></script>
 
@@ -23,6 +23,27 @@
 
 	<!--FONT AWESOME-->
 	<script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+
+	<style>
+        .chart-c {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 200px; /* Espaçamento entre os gráficos */
+	
+        }
+	
+        canvas {
+            max-width: 500px; /* Largura máxima */
+            max-height: 500px; /* Altura máxima */
+            width: 100%; /* Para garantir a responsividade */
+            height: auto; /* Para garantir a responsividade */
+            padding: 1rem;
+            border: 4px solid #89023E;
+			background-color: rgba(255, 255, 255, 0.793);
+	
+        }
+    </style>
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
@@ -62,19 +83,18 @@
 			</ul>
 		</nav>
 	</header>
-	</div>
-</body>
 
-<div style="display: flex;">
-	<canvas id="myChart" width="300px" height="70" style="padding: 3rem;"></canvas>
-	<div>
-	<canvas id="myChart2"></canvas>
-</div>
-</div>
+    <div class="chart-c">
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart2"></canvas>
+    </div>
+
+</body>
 
 </html>
 
 <script>
+
 	const ctx = document.getElementById('myChart');
 
 	new Chart(ctx, {
@@ -85,24 +105,16 @@
 				label: 'My First Dataset',
 				data: [65, 59],
 				backgroundColor: [
-					'rgba(255, 99, 132, 0.2)',
-					'rgba(255, 159, 64, 0.2)',
-					'rgba(255, 205, 86, 0.2)',
-					'rgba(75, 192, 192, 0.2)',
-					'rgba(54, 162, 235, 0.2)',
-					'rgba(153, 102, 255, 0.2)',
-					'rgba(201, 203, 207, 0.2)'
+					'rgba(39, 163, 0, 0.4)',
+					'rgba(186, 12, 12, 0.4)',
+
 				],
+				
 				borderColor: [
-					'rgb(255, 99, 132)',
-					'rgb(255, 159, 64)',
-					'rgb(255, 205, 86)',
-					'rgb(75, 192, 192)',
-					'rgb(54, 162, 235)',
-					'rgb(153, 102, 255)',
-					'rgb(201, 203, 207)'
+					'rgb(39, 163, 0)',
+					'rgb(186, 12, 12)',
 				],
-				borderWidth: 1
+				borderWidth: 2
 			}]
 		},
 		options: {
@@ -119,27 +131,17 @@
 	new Chart(ctx2, {
 		type: 'pie',
 		data: {
-			labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			labels: ['Red', 'Blue'],
 			datasets: [{
 				label: 'My First Dataset',
-				data: [65, 59, 80, 81, 56, 55, 40],
+				data: [65, 59],
 				backgroundColor: [
-					'rgba(255, 99, 132, 0.2)',
-					'rgba(255, 159, 64, 0.2)',
-					'rgba(255, 205, 86, 0.2)',
-					'rgba(75, 192, 192, 0.2)',
-					'rgba(54, 162, 235, 0.2)',
-					'rgba(153, 102, 255, 0.2)',
-					'rgba(201, 203, 207, 0.2)'
+				'rgba(39, 163, 0, 0.4)',
+				'rgba(186, 12, 12, 0.4)',
 				],
 				borderColor: [
-					'rgb(255, 99, 132)',
-					'rgb(255, 159, 64)',
-					'rgb(255, 205, 86)',
-					'rgb(75, 192, 192)',
-					'rgb(54, 162, 235)',
-					'rgb(153, 102, 255)',
-					'rgb(201, 203, 207)'
+				'rgb(39, 163, 0)',
+				'rgb(186, 12, 12)',
 				],
 				borderWidth: 1
 			}]
@@ -147,7 +149,8 @@
 		options: {
 			scales: {
 				y: {
-					beginAtZero: true
+					beginAtZero: true,
+				
 				}
 			}
 		}
@@ -291,7 +294,8 @@
 		console.log('iniciando plotagem do gráfico...');
 
 		// Criando estrutura para plotar gráfico - labels
-		let labels = [];
+		let erros = [];
+		let acertos = [];
 
 		// Criando estrutura para plotar gráfico - dados
 		let dados = {

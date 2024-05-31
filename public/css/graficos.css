@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+/* MAIN PAGE */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cinzel", serif;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;   
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+background-image: url(../assets/img/dash3.png);
+}
+
+header {
+  position: relative;
+  height: 75px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  z-index: 1;
+  margin-left: -30px;
+  margin-top: 0;
+}
+
+.menu-1 {
+  display: flex;
+  cursor: pointer;
+  width: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 5%;
+}
+
+.menu {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px; /* Largura do menu */
+  height: 100%; /* Altura igual à altura da tela */
+  background-color: #2421217c; /* Cor de fundo do menu */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de destaque */
+  border-radius: 2% ;
+}
+
+.menu ul li {
+  margin-right: 30px; /* Espaçamento entre os itens da lista */
+  text-align: center; /* Centralizar texto dentro da lista */  
+}
+
+.menu.active {
+  display: block; /* Exibido quando ativo */
+  left:0;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 50px;
+  margin-top: -22%;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.btn-nav {
+  width: 40%;
+  height: 20%;
+  color: white;
+  background-color: #89023E;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px;
+}
+
+.btn-nav a{
+  color: white;
+  text-decoration: underline;
+}
+
+.btn-nav-white {
+  width: 40%;
+  height: 20%;
+  background-color: white;
+  border: 3px solid #89023E;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px;
+}
+
+.btn-nav-white:hover{
+  color: #89023E;
+}
+
+.btn-nav-white h3 {
+  color: #89023E;
+  padding: 0;
+  margin: 0;
+}
+
+
+.btn-nav,
+.btn-nav-white,
+.btn-logout {
+  width: 80%; /* Ajustar largura dos botões */
+  height: 20%;
+  color: white;
+  text-align: center;
+  padding: 1px 4px;
+  margin: 15px auto;
+
+}
+
+.btn-logout {
+  width: 30%; /* Ajustar largura do botão */
+  background-color: #89023E;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.imgJanela{
+  margin-left: 40px;
+  margin-top: 0;
+  width: 70%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  }
+
+.img{
+width: 200px;
+height: 200px;
+margin-left: 0px;
+margin-top: 0;
+}
+
+/* QUIZ - opcoes */
+
+.container {
+  display: flex;
+  justify-content: center; /* Centraliza os elementos horizontalmente */
+  height: 100vh; /* Define a altura da tela como 100% da altura do viewport */
+}
+
+.card1 {
+  display: inline-block;
+  width: 400px;
+  height: 550px;
+  padding: 20px;
+  background-image: url(../assets/img/_209a8f26-979f-4dc8-a21a-8a7973634e76.jpeg);
+  background-size: cover; /* Certifique-se de que a imagem de fundo cubra todo o contêiner */
+  background-position: center; /* Centralize a imagem de fundo */
+  border-radius: 15px;
+  text-decoration: none;
+  color: #000000;
+  transition: transform 0.3s;
+  margin: 0 50px; /* Isso centraliza os elementos horizontalmente */
+  
+}
+
+.card1 h2,
+.card2 h2{
+  font-size: 40px;
+  text-align: center;
+}
+
+.card2 {
+  display: inline-block;
+  width: 400px;
+  height: 550px;
+  padding: 20px;
+  background-image: url(../assets/img/_be361f2a-ec5d-41d7-8f92-660e8488f495.jpeg);
+  background-size: cover; /* Certifique-se de que a imagem de fundo cubra todo o contêiner */
+  background-position: center; /* Centralize a imagem de fundo */
+  border-radius: 15px;
+  text-decoration: none;
+  color: #000000;
+  transition: transform 0.3s;
+  margin: 0 50px; /* Isso centraliza os elementos horizontalmente */
+}
+
+.card1:hover,
+.card2:hover {
+  transform: translateY(-5px);
+}
+
+ /* footer*/
+  
+ .footer {
+  height: 80px;
+  background-color: #89023e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .foo {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .foo p {
+  font-weight: bold;
+}
+
+.grafico{
+    background-color: #89023E;
+}

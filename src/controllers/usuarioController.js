@@ -1,5 +1,5 @@
 var usuarioModel = require("../models/usuarioModel");
-var aquarioModel = require("../models/aquarioModel");
+
 
 function autenticar(req, res) {
 	var email = req.body.emailServer;
@@ -83,31 +83,70 @@ function cadastrar(req, res) {
 
 
 function armazenarPontuacao(req, res) {
-    var userId = req.body.userId;
-    var acertos = req.body.acertos;
-    var erros = req.body.erros;
+	var userId = req.body.userId;
+	var acertos = req.body.acertos;
+	var erros = req.body.erros;
+	var categoriaId = req.body.categoriaId;
 
-    usuarioModel.verificarPontuacaoUsuario(userId)
+	usuarioModel.verificarPontuacaoUsuario(userId)
+		.then(function (resultado) {
+			if (resultado.length > 0) {
+				// Usuário já tem uma pontuação, então atualize
+				return usuarioModel.atualizarPontuacaoUsuario(userId, acertos, erros, categoriaId);
+			} else {
+				// Usuário não tem pontuação, então insira
+				return usuarioModel.inserirPontuacaoUsuario(userId, acertos, erros, categoriaId);
+			}
+		})
+		.then(function () {
+			res.status(200).send("Pontuação armazenada ou atualizada com sucesso!");
+		})
+		.catch(function (erro) {
+			console.error("Erro ao armazenar ou atualizar pontuação do usuário:", erro);
+			res.status(500).send("Erro ao armazenar ou atualizar pontuação do usuário");
+		});
+}
+
+function obterPontuacaoUsuario(req, res) {
+    const idUsuario = req.params.idUsuario;
+
+    usuarioModel.verificarPontuacaoUsuario(idUsuario)
         .then(function (resultado) {
-            if (resultado.length > 0) {
-                // Usuário já tem uma pontuação, então atualize
-                return usuarioModel.atualizarPontuacaoUsuario(userId, acertos, erros);
-            } else {
-                // Usuário não tem pontuação, então insira
-                return usuarioModel.inserirPontuacaoUsuario(userId, acertos, erros);
-            }
-        })
-        .then(function () {
-            res.status(200).send("Pontuação armazenada ou atualizada com sucesso!");
+            res.json(resultado); // Envie os dados de pontuação do usuário como resposta
         })
         .catch(function (erro) {
-            console.error("Erro ao armazenar ou atualizar pontuação do usuário:", erro);
-            res.status(500).send("Erro ao armazenar ou atualizar pontuação do usuário");
+            console.error("Erro ao obter pontuação do usuário:", erro);
+            res.status(500).send("Erro ao obter pontuação do usuário");
         });
 }
 
+function gerarGraficoPontuacao(req, res) {
+    try {
+        // Recupera os dados de pontuação dos usuários do banco de dados
+        const pontuacoes = usuarioModel.obterPontuacoes();
+
+        // Processa os dados para o formato esperado pelo Chart.js
+        const labels = pontuacoes.map(pontuacao => pontuacao.nome); // Nomes dos usuários
+        const acertos = pontuacoes.map(pontuacao => pontuacao.acertos); // Quantidade de acertos
+        const erros = pontuacoes.map(pontuacao => pontuacao.erros); // Quantidade de erros
+
+        // Renderiza o gráfico
+        res.render('grafico', {
+            labels: JSON.stringify(labels),
+            acertos: JSON.stringify(acertos),
+            erros: JSON.stringify(erros)
+        });
+    } catch (error) {
+        console.error("Erro ao gerar gráfico de pontuação:", error);
+        res.status(500).send("Erro ao gerar gráfico de pontuação");
+    }
+}
+
+
 module.exports = {
-    autenticar,
-    cadastrar,
-    armazenarPontuacao
+	autenticar,
+	cadastrar,
+	armazenarPontuacao,
+	obterPontuacaoUsuario,
+	gerarGraficoPontuacao
 };

@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-
 var usuarioController = require("../controllers/usuarioController");
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
@@ -13,5 +12,6 @@ router.post("/autenticar", function (req, res) {
 });
 
 router.post("/armazenarPontuacao", usuarioController.armazenarPontuacao);
+router.get('/pontuacao/:idUsuario', usuarioController.obterPontuacaoUsuario);
 
 module.exports = router;
