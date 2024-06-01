@@ -32,13 +32,13 @@ function cadastrar(nome, cpf, email, senha) {
 	return database.executar(instrucaoSql);
 }
 
-function verificarPontuacaoUsuario(idUsuario) {
-    var instrucaoSql = `SELECT * FROM Resposta WHERE fkUsuario = ${idUsuario};`;
+function verificarPontuacaoUsuario(idUsuario, categoriaId) {
+    var instrucaoSql = `SELECT * FROM Resposta WHERE fkUsuario = ${idUsuario} AND fkCategoria = ${categoriaId};`;
     return database.executar(instrucaoSql)
 }
 	
 function inserirPontuacaoUsuario(idUsuario, acertos, erros, fkCategoria) {
-    var instrucaoSql = `INSERT INTO Resposta (acertos, erros, fkUsuario, fkCategoria) VALUES (${acertos}, ${erros} ,${idUsuario}, ${fkCategoria}  );`;
+    var instrucaoSql = `INSERT INTO Resposta (acertos, erros, fkUsuario, fkCategoria) VALUES (${acertos}, ${erros} ,${idUsuario}, ${fkCategoria});`;
     return database.executar(instrucaoSql);
 }
 

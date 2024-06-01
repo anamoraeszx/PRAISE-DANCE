@@ -88,22 +88,47 @@ function armazenarPontuacao(req, res) {
 	var erros = req.body.erros;
 	var categoriaId = req.body.categoriaId;
 
-	usuarioModel.verificarPontuacaoUsuario(userId)
+	// Validações básicas
+	if (!userId || !acertos || !erros || !categoriaId) {
+		return res
+			.status(400)
+			.send("Dados insuficientes para armazenar pontuação!");
+	}
+
+	usuarioModel
+		.verificarPontuacaoUsuario(userId, categoriaId)
 		.then(function (resultado) {
 			if (resultado.length > 0) {
-				// Usuário já tem uma pontuação, então atualize
-				return usuarioModel.atualizarPontuacaoUsuario(userId, acertos, erros, categoriaId);
+				// Usuário já tem uma pontuação nesta categoria, então atualize
+				return usuarioModel.atualizarPontuacaoUsuario(
+					userId,
+					acertos,
+					erros,
+					categoriaId
+				);
 			} else {
-				// Usuário não tem pontuação, então insira
-				return usuarioModel.inserirPontuacaoUsuario(userId, acertos, erros, categoriaId);
+				// Usuário não tem pontuação nesta categoria, então insira
+				return usuarioModel.inserirPontuacaoUsuario(
+					userId,
+					acertos,
+					erros,
+					categoriaId
+				);
 			}
 		})
 		.then(function () {
-			res.status(200).send("Pontuação armazenada ou atualizada com sucesso!");
+			res.status(200).send(
+				"Pontuação armazenada ou atualizada com sucesso!"
+			);
 		})
 		.catch(function (erro) {
-			console.error("Erro ao armazenar ou atualizar pontuação do usuário:", erro);
-			res.status(500).send("Erro ao armazenar ou atualizar pontuação do usuário");
+			console.error(
+				"Erro ao armazenar ou atualizar pontuação do usuário:",
+				erro
+			);
+			res.status(500).send(
+				"Erro ao armazenar ou atualizar pontuação do usuário"
+			);
 		});
 }
 

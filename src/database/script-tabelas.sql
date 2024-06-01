@@ -5,7 +5,7 @@
 /*
 comandos para mysql server
 */
-
+DROP DATABASE PRAISE_DANCE;
 CREATE DATABASE PRAISE_DANCE;
 
 USE PRAISE_DANCE;
@@ -27,7 +27,7 @@ CREATE TABLE Categoria (
 
 INSERT INTO Categoria VALUE 
 (1, 'ballet'),
-(2, 'Hip Hop'):
+(2, 'Hip Hop');
 
 /* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
 
@@ -38,14 +38,8 @@ CREATE TABLE Resposta (
     erros INT,
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(id),
-    UNIQUE (fkUsuario),
     fkCategoria INT,
     FOREIGN KEY (fkCategoria) REFERENCES Categoria(idCategoria)
 );
 
 select * from Resposta;
-
-
-
-
-

@@ -121,9 +121,9 @@
 				}
 			};
 
-			const createChart = (ctx, type, acertos, erros) => {
+			const criarGrafico = (ctx, tipo, acertos, erros) => {
 				new Chart(ctx, {
-					type: type,
+					type: tipo,
 					data: {
 						labels: ["Resposta"],
 						datasets: [
@@ -170,16 +170,16 @@
 					const ctx1 = document
 						.getElementById(chartId1)
 						.getContext("2d");
-					createChart(ctx1, "bar", acertos, erros);
+					criarGrafico(ctx1, "bar", acertos, erros);
 
 					const ctx2 = document
 						.getElementById(chartId2)
 						.getContext("2d");
-					createChart(ctx2, "pie", acertos, erros);
+					criarGrafico(ctx2, "pie", acertos, erros);
 				}
 			};
 
-			const initCharts = async () => {
+			const aparecerGraficos = async () => {
 				const userId = sessionStorage.ID_USUARIO;
 				await exibirGraficoEvolucaoAcertos(
 					userId,
@@ -195,7 +195,7 @@
 				);
 			};
 
-			document.addEventListener("DOMContentLoaded", initCharts);
+			document.addEventListener("DOMContentLoaded", aparecerGraficos);
 
 			const menuToggle = document.querySelector(".menu-1");
 			const menu = document.querySelector(".menu");
