@@ -32,8 +32,8 @@ function cadastrar(nome, cpf, email, senha) {
 	return database.executar(instrucaoSql);
 }
 
-function verificarPontuacaoUsuario(idUsuario, categoriaId) {
-    var instrucaoSql = `SELECT * FROM Resposta WHERE fkUsuario = ${idUsuario} AND fkCategoria = ${categoriaId};`;
+function verificarPontuacaoUsuario(idUsuario, categoriaID) {
+    var instrucaoSql = `SELECT * FROM Resposta WHERE fkUsuario = ${idUsuario} AND fkCategoria = ${categoriaID};`;
     return database.executar(instrucaoSql)
 }
 	

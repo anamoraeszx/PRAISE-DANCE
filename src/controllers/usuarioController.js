@@ -86,17 +86,17 @@ function armazenarPontuacao(req, res) {
 	var userId = req.body.userId;
 	var acertos = req.body.acertos;
 	var erros = req.body.erros;
-	var categoriaId = req.body.categoriaId;
+	var categoriaID = req.body.categoriaId;
 
 	// Validações básicas
-	if (!userId || !acertos || !erros || !categoriaId) {
+	if (!userId || !acertos || !erros || !categoriaID) {
 		return res
 			.status(400)
 			.send("Dados insuficientes para armazenar pontuação!");
 	}
 
 	usuarioModel
-		.verificarPontuacaoUsuario(userId, categoriaId)
+		.verificarPontuacaoUsuario(userId, categoriaID)
 		.then(function (resultado) {
 			if (resultado.length > 0) {
 				// Usuário já tem uma pontuação nesta categoria, então atualize
@@ -104,7 +104,7 @@ function armazenarPontuacao(req, res) {
 					userId,
 					acertos,
 					erros,
-					categoriaId
+					categoriaID
 				);
 			} else {
 				// Usuário não tem pontuação nesta categoria, então insira
@@ -112,7 +112,7 @@ function armazenarPontuacao(req, res) {
 					userId,
 					acertos,
 					erros,
-					categoriaId
+					categoriaID
 				);
 			}
 		})
