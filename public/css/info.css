@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.card01,
+.card02,
+.card03,
+.card04 {
+    width: 350px;
+    height: 300px;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px; 
+}
+
+.card01{
+    background-image: url( ../assets/img/gif01.gif);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+
+}
+
+.card02{
+    background-image: url( ../assets/img/gif02.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+
+
+}
+
+.card03{
+    background-image: url( ../assets/img/gif03.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+.card04{
+    background-image: url( ../assets/img/git04.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+
+.card01:hover,
+.card02:hover,
+.card03:hover,
+.card04:hover {
+    transform: scale(1.05);
+}
+
+
+h4 {
+    margin-top: 250px;
+    color: #9e2d60;
+    font-size: 25PX;
+
+}
+
+h2{
+    color: white;
+}
+
+h6{
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+p {
+
+    color: white;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.card01_1,
+.card02_1,
+.card03_1,
+.card04_1{
+    height: 30vh;
+    width: 550px;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: auto; /* Centraliza horizontalmente */
+    margin-top: calc((90vh - 70vh) / 2); /* Centraliza verticalmente */
+}
+
+.card_01{
+    background-image: url( ../assets/img/jay-z.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+
+}
+
+.card_02{
+    background-image: url( ../assets/img/tupac.jpeg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+
+
+}
+
+.card_03{
+    background-image: url( ../assets/img/gif03.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+.card_04{
+    background-image: url( ../assets/img/git04.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+.card05,
+.card06,
+.card07,
+.card08 {
+    width: 350px;
+    height: 300px;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px; 
+}
+
+.card05{
+    background-image: url( ../assets/img/jay-z.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+
+}
+
+.card06{
+    background-image: url( ../assets/img/tupac.jpeg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+
+
+}
+
+.card07{
+    background-image: url( ../assets/img/Mikhail.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+.card08{
+    background-image: url( ../assets/img/anna-pavlova.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+
+.card05:hover,
+.card06:hover,
+.card07:hover,
+.card08:hover {
+    transform: scale(1.05);
+}
+
+.card05_1,
+.card06_1,
+.card07_1,
+.card08_1{
+    height: 40vh;
+    width: 700px;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: auto; /* Centraliza horizontalmente */
+    margin-top: calc((90vh - 70vh) / 2); /* Centraliza verticalmente */
+}
+
+.card05_1{
+    background-image: url( ../assets/img/images.jpeg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+.card06_1{
+    background-image: url( ../assets/img/tupacpalco.jpeg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+.card07_1{
+    background-image: url( ../assets/img/Mikhail-Baryshnikov.jpg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+.card08_1{
+    background-image: url( ../assets/img/aninha.jpeg);
+    background-size: cover; /* Ajusta o tamanho do GIF para cobrir todo o espaço do card */
+    background-position: center; /* Centraliza a posição do GIF no card */
+}
+
+.legend{
+    color: white;
+}

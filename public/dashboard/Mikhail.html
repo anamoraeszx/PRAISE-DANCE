@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAISE-DANCE || Mikhail Baryshnikov</title>
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/info.css">
+    
+</head>
+<body>
+    <header>
+        <div class="menu-1">
+            <div>
+                <img class="img" src="../assets/img/elemento.png" alt="" />
+            </div>
+        </div>
+
+        <nav class="menu">
+            <img class="imgJanela" src="../assets/img/2.png" alt="" />
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <ul>
+                <br />
+                <br />
+                <div class="btn-nav">
+                    <a href="cards.html"><h3>MAIN PAGE</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="quiz.html"> <h3>QUIZ</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="dashboard.html"> <h3>grafico</h3> </a>
+                </div>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <center><h2>Mikhail Baryshnikov</h2></center> <br> <br>
+    
+    <p>
+        Mikhail Baryshnikov nasceu em 27 de janeiro de 1948, em Riga, Letônia (então parte da União Soviética). <br>
+        Desde muito jovem, ele mostrou talento para a dança, começando a treinar em ballet aos 9 anos de idade. <br>
+        Ele estudou na Escola Coreográfica de Riga e mais tarde na Escola Coreográfica Vaganova em Leningrado (atual São Petersburgo), <br> 
+        uma das instituições mais prestigiadas para o treinamento de bailarinos clássicos. <br><br>
+
+        Baryshnikov rapidamente se destacou como um talento excepcional, <br>
+        ganhando prêmios em competições de dança na União Soviética e chamando a atenção <br> 
+        dos principais diretores de ballet. Ele ingressou no Ballet Kirov (agora Ballet Mariinsky) <br> 
+        em Leningrado em 1967, onde se tornou um principal bailarino e ganhou aclamação internacional por suas performances. <br> <br>
+        
+        Baryshnikov foi introduzido ao mundo do ballet desde tenra idade. Ele começou a estudar dança na Escola <br>
+        Coreográfica de Riga, onde seu talento excepcional chamou a atenção dos instrutores e colegas. Seu treinamento <br> 
+        intensivo na escola de ballet russa, conhecida por sua ênfase na técnica clássica e na expressão artística, <br>
+        foi fundamental para o desenvolvimento de suas habilidades como bailarino. <br> <br>
+
+        Ao longo de sua carreira, Baryshnikov continuou a expandir seu repertório, <br>
+        explorando uma variedade de estilos de dança e colaborando com coreógrafos <br>
+        de renome mundial. Sua dedicação à sua arte e sua busca incessante pela excelência <br> 
+        o estabeleceram como um dos bailarinos mais influentes e respeitados do século XX.
+    </p>
+    
+        <div class="card07_1"></div>
+        
+</body>
+</html>
+<script>
+    // Seleciona o botão do menu
+		const menuToggle = document.querySelector(".menu-1");
+		// Seleciona o menu de navegação
+		const menu = document.querySelector(".menu");
+
+		// Adiciona um evento de clique ao botão do menu
+		menuToggle.addEventListener("click", function () {
+			// Alterna a classe 'active' no menu de navegação
+			menu.classList.toggle("active");
+		});
+
+		// Adiciona um evento de clique ao documento inteiro
+		document.addEventListener("click", function (event) {
+			// Verifica se o clique ocorreu fora do menu
+			if (
+				!menu.contains(event.target) &&
+				!menuToggle.contains(event.target)
+			) {
+				// Fecha o menu
+				menu.classList.remove("active");
+			}
+		});
+</script>

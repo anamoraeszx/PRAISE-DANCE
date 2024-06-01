@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAISE-DANCE || Tupac Shakur (2Pac)</title>
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/info.css">
+    
+</head>
+<body>
+    <header>
+        <div class="menu-1">
+            <div>
+                <img class="img" src="../assets/img/elemento.png" alt="" />
+            </div>
+        </div>
+
+        <nav class="menu">
+            <img class="imgJanela" src="../assets/img/2.png" alt="" />
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            <ul>
+                <br />
+                <br />
+                <div class="btn-nav">
+                    <a href="cards.html"><h3>MAIN PAGE</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="quiz.html"> <h3>QUIZ</h3> </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="dashboard.html"> <h3>grafico</h3> </a>
+                </div>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <center><h2>Tupac Shakur (2Pac)</h2></center> <br> <br>
+    
+    <p>
+        Tupac Shakur, nascido Lesane Parish Crooks em 16 de junho de 1971 em Nova York, é <br>
+        considerado uma das figuras mais influentes na história do hip hop. Ele cresceu em condições difíceis, <br>
+        frequentemente mudando de residência devido à instabilidade financeira de sua família. Sua mãe, Afeni Shakur, <br>
+        era uma ativista política e membro do Partido dos Panteras Negras, o que influenciou fortemente <br>
+        sua visão de mundo e sua arte. <br><br>
+
+        Tupac começou sua carreira musical como dançarino e roadie para o grupo de hip hop Digital Underground. <br>
+        Ele logo lançou seu álbum de estreia solo, "2Pacalypse Now", em 1991, que abordava questões sociais e raciais <br>
+        e chamou a atenção para suas habilidades líricas e seu talento como contador de histórias. <br> <br>
+        
+        Ao longo de sua carreira, Tupac lançou vários álbuns aclamados pela crítica e sucesso comercial, incluindo <br>
+        "Strictly 4 My N.I.G.G.A.Z.", "Me Against the World" e "All Eyez on Me". No entanto, sua vida foi marcada por <br>
+        controvérsias, incluindo problemas legais, tiroteios e uma rivalidade bem documentada com o rapper Notorious B.I.G. <br>
+        
+        Em 1996, Tupac foi tragicamente assassinado em Las Vegas aos 25 anos de idade. Sua morte deixou um enorme <br>
+        impacto na comunidade do hip hop e no mundo da música em geral, e ele é lembrado como uma figura icônica cujo <br>
+        legado continua a influenciar artistas até hoje. <br>
+        
+
+        Tupac foi uma figura central no desenvolvimento do hip hop como uma forma de expressão artística <br>
+        e como um veículo para abordar questões sociais e políticas. Suas letras poderosas e emotivas tratavam de <br>
+        temas como violência urbana, desigualdade racial, pobreza e injustiça social. Ele foi um dos primeiros artistas <br>
+        a trazer uma abordagem mais pessoal e introspectiva para o hip hop, abrindo caminho para futuras gerações de rappers. <br><br>
+        
+        Além de sua música, Tupac também foi um ator talentoso, estrelando em vários filmes, <br>
+        incluindo "Juice", "Poetic Justice" e "Above the Rim". Sua influência na cultura popular vai <br>
+        além da música, e ele é frequentemente citado como uma das figuras mais importantes e respeitadas do hip hop.</p>
+    
+        <div class="card06_1"></div>
+        
+</body>
+</html>
+<script>
+    // Seleciona o botão do menu
+		const menuToggle = document.querySelector(".menu-1");
+		// Seleciona o menu de navegação
+		const menu = document.querySelector(".menu");
+
+		// Adiciona um evento de clique ao botão do menu
+		menuToggle.addEventListener("click", function () {
+			// Alterna a classe 'active' no menu de navegação
+			menu.classList.toggle("active");
+		});
+
+		// Adiciona um evento de clique ao documento inteiro
+		document.addEventListener("click", function (event) {
+			// Verifica se o clique ocorreu fora do menu
+			if (
+				!menu.contains(event.target) &&
+				!menuToggle.contains(event.target)
+			) {
+				// Fecha o menu
+				menu.classList.remove("active");
+			}
+		});
+</script>
