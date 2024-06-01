@@ -36,12 +36,33 @@ CREATE TABLE Resposta (
     erros INT,
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(id),
-    UNIQUE (fkUsuario),
 	fkCategoria INT,
 	FOREIGN KEY (fkCategoria) REFERENCES Categoria(idCategoria)
 );
 
 select * from Resposta;
+
+
+SELECT MAX(acertos) AS max_acertos FROM Resposta;
+select MIN(acertos) as min_acertos from Resposta;
+SELECT AVG(acertos) AS media_acertos FROM Resposta;
+SELECT ROUND(AVG(acertos), 2) AS media_acertos_arredondada FROM Resposta;
+
+-- CONETANDO AS TABELAS
+
+SELECT Resposta.idResposta, Resposta.acertos, Resposta.erros, Usuario.nome AS nome_usuario FROM Resposta
+INNER JOIN Usuario ON Resposta.fkUsuario = Usuario.id;
+
+SELECT Resposta.idResposta, Resposta.acertos, Resposta.erros, Categoria.categoria AS nome_categoria FROM Resposta
+INNER JOIN Categoria ON Resposta.fkCategoria = Categoria.idCategoria;
+
+SELECT Resposta.idResposta, Resposta.acertos, Resposta.erros, Usuario.nome AS nome_usuario, Categoria.categoria AS nome_categoria FROM Resposta
+INNER JOIN Usuario ON Resposta.fkUsuario = Usuario.id
+INNER JOIN Categoria ON Resposta.fkCategoria = Categoria.idCategoria;
+
+
+
+
 
 
 

@@ -257,12 +257,20 @@
 		}
 
 		function mostrarResultado() {
+			const totalPerguntas = perguntasHipHop.length;
+    		const perguntasRespondidas = acertos + erros;
+
 			elementoPergunta.style.display = "none";
 			elementoOpcoes.style.display = "none";
 			botaoEnviar.style.display = "none";
-			elementoResultado.textContent = `Você acertou ${acertos} de ${perguntasHipHop.length} perguntas.`;
+			elementoResultado.textContent = `Você acertou ${acertos} de ${perguntasHipHop.length} questões.`;
 			elementoResultado.style.display = "block";
 			enviarPontuacao(acertos, erros, 2);
+
+			// Redirecionar para a página de ranking após 3 segundos
+		setTimeout(() => {
+        window.location.href = 'graficohiphop.html';
+    }, 800); 
 		}
 
 		function enviarPontuacao(acertos, erros, categoriaId) {

@@ -272,6 +272,10 @@
 			elementoResultado.textContent = `Você acertou ${acertos} de ${perguntasBallet.length} questões.`;
 			elementoResultado.style.display = "block";
 			enviarPontuacao(acertos, erros, 1);
+
+			setTimeout(() => {
+        window.location.href = 'graficoballet.html';
+    	}, 800); 
 		}
 
 		function enviarPontuacao(acertos,erros, categoriaId) {

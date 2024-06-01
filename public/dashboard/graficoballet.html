@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<link
+			rel="shortcut icon"
+			href="../assets/icon/favicon2.ico"
+			type="image/x-icon"
+		/>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PRAISE-DANCE | Dashboards</title>
+		<link rel="stylesheet" href="../css/graficos.css" />
+		<script src="../js/sessao.js"></script>
+		<script src="./../js/alerta.js"></script>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script
+			src="https://kit.fontawesome.com/9f7414eb10.js"
+			crossorigin="anonymous"
+		></script>
+		<style>
+			.chart-c {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 200px;
+			}
+
+			canvas {
+				max-width: 500px;
+				max-height: 500px;
+				width: 100%;
+				height: auto;
+				padding: 1rem;
+				border: 4px solid #89023e;
+				background-color: rgba(255, 255, 255, 0.793);
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="menu-1">
+				<div>
+					<img class="img" src="../assets/img/elemento.png" alt="" />
+				</div>
+			</div>
+			<nav class="menu">
+				<img class="imgJanela" src="../assets/img/2.png" alt="" />
+				<ul>
+					<br />
+					<br />
+					<div class="btn-nav-white">
+						<a href="cards.html"><h3>MAIN PAGE</h3></a>
+					</div>
+					<div class="btn-nav-white">
+						<a href="quiz.html"><h3>QUIZ</h3></a>
+					</div>
+					<div class="btn-nav">
+						<a href="dashboard.html"><h3>grafico</h3></a>
+					</div>
+					<div class="btn-logout" onclick="limparSessao()">
+						<h3>Sair</h3>
+					</div>
+				</ul>
+			</nav>
+		</header>
+
+		<center><h2>Aqui sera exibida a sua pontuação</h2></center> <br>
+		<h2
+			style="
+				text-align: center;
+				margin: 3rem;
+				margin-top: 0;
+				font-size: 50px;
+				text-decoration: underline #89023e;
+			"
+		>
+			Quiz Ballet
+		</h2>
+		<div class="chart-c">
+			<canvas id="myChart"></canvas>
+			<canvas id="myChart2"></canvas>
+		</div>
+		<h2
+			style="
+				text-align: center;
+				margin: 3rem;
+				font-size: 50px;
+				text-decoration: underline #89023e;
+			"
+		>
+			Quiz Hip-Hop
+		</h2>
+		<div class="chart-c">
+			<canvas id="myChart3"></canvas>
+			<canvas id="myChart4"></canvas>
+		</div>
+		<script>
+			const fetchData = async (userId, quiz) => {
+				try {
+					const response = await fetch(
+						`/usuarios/obterPontuacoes/${userId}/${quiz}`
+					);
+					if (response.ok) {
+						const data = await response.json();
+						console.log(`Dados obtidos para quiz ${quiz}:`, data);
+						return data;
+					} else {
+						console.error(
+							"Erro ao obter dados:",
+							response.statusText
+						);
+						return null;
+					}
+				} catch (error) {
+					console.error("Erro ao obter dados:", error);
+					return null;
+				}
+			};
+
+			const criarGrafico = (ctx, tipo, acertos, erros) => {
+				new Chart(ctx, {
+					type: tipo,
+					data: {
+						labels: ["Resposta"],
+						datasets: [
+							{
+								label: "Acertos",
+								data: acertos,
+								backgroundColor: "rgba(39, 163, 0, 0.4)",
+								borderColor: "rgb(39, 163, 0)",
+								borderWidth: 2,
+							},
+							{
+								label: "Erros",
+								data: erros,
+								backgroundColor: "rgba(186, 12, 12, 0.4)",
+								borderColor: "rgb(186, 12, 12)",
+								borderWidth: 2,
+							},
+						],
+					},
+					options: {
+						scales: {
+							y: {
+								beginAtZero: true,
+							},
+						},
+					},
+				});
+			};
+
+			const exibirGraficoEvolucaoAcertos = async (
+				userId,
+				quiz,
+				chartId1,
+				chartId2
+			) => {
+				const data = await fetchData(userId, quiz);
+				if (data) {
+					const acertos = data.map((item) => item.acertos);
+					const erros = data.map((item) => item.erros);
+
+					console.log(`Acertos para quiz ${quiz}:`, acertos);
+					console.log(`Erros para quiz ${quiz}:`, erros);
+
+					const ctx1 = document
+						.getElementById(chartId1)
+						.getContext("2d");
+					criarGrafico(ctx1, "bar", acertos, erros);
+
+					const ctx2 = document
+						.getElementById(chartId2)
+						.getContext("2d");
+					criarGrafico(ctx2, "pie", acertos, erros);
+				}
+			};
+
+			const aparecerGraficos = async () => {
+				const userId = sessionStorage.ID_USUARIO;
+				await exibirGraficoEvolucaoAcertos(
+					userId,
+					1,
+					"myChart",
+					"myChart2"
+				);
+				await exibirGraficoEvolucaoAcertos(
+					userId,
+					2,
+					"myChart3",
+					"myChart4"
+				);
+			};
+
+			document.addEventListener("DOMContentLoaded", aparecerGraficos);
+
+			const menuToggle = document.querySelector(".menu-1");
+			const menu = document.querySelector(".menu");
+
+			menuToggle.addEventListener("click", function () {
+				menu.classList.toggle("active");
+			});
+
+			document.addEventListener("click", function (event) {
+				if (
+					!menu.contains(event.target) &&
+					!menuToggle.contains(event.target)
+				) {
+					menu.classList.remove("active");
+				}
+			});
+		</script>
+	</body>
+</html>
